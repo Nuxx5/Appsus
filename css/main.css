@@ -1,0 +1,61 @@
+@import "apps/keep/cmps/keep-compose.cmp.css";
+@import "apps/keep/cmps/keep-filter.cmp.css";
+@import "apps/keep/cmps/keep-list.cmp.css";
+@import "apps/keep/cmps/keep-long-text.cmp.css";
+@import "apps/keep/cmps/keep-preview.cmp.css";
+@import "apps/keep/cmps/user-msg.cmp.css";
+@import "apps/keep/pages/keep-app.cmp.css";
+@import "apps/keep/pages/keep-details.cmp.css";
+@import "apps/keep/services/keep-service.css";
+@import "apps/mail/cmps/email-compose.cmp.css";
+@import "apps/mail/cmps/email-filter.cmp.css";
+@import "apps/mail/cmps/email-list.cmp.css";
+@import "apps/mail/cmps/email-preview.cmp.css";
+@import "apps/mail/cmps/email-status.cmp.css";
+@import "apps/mail/cmps/long-text.cmp.css";
+@import "apps/mail/cmps/user-msg.cmp.css";
+@import "apps/mail/pages/email-app.cmp.css";
+@import "apps/mail/pages/email-details.cmp.css";
+@import "apps/mail/services/email-service.cmp.css";
+
+
+*{
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+/* HEADER */
+
+.app-header{
+    background-color: rgb(9, 102, 156);
+    padding: 10px;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* FOOTER */
+
+.app-footer {
+    background-color: rgb(9, 102, 156);
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+/* HOMEPAGE */
+
+.home.app-main, .about {
+    background-image: url('/img/appsus.jpg');
+    height: 100vh;
+    text-align: center;
+}
+
+.about {
+    text-align: center;
+}
