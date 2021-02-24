@@ -7,6 +7,8 @@ export default {
     template: `
     <section  class="email-details">
         <p>Subject: {{mail.subject}}</p>
+        <p>Subject: </p>
+        <router-link to="/mail">Back</router-link>
     </section>
     `,
     // v-if="mail"
@@ -16,7 +18,7 @@ export default {
             mail: null,
         }
     },
-    methods:{
+    methods: {
         loadMail() {
             const mailId = this.$route.params.mailId;
             console.log('mail.id details1', mailId);
@@ -29,4 +31,10 @@ export default {
     created() {
         this.loadMail();
     },
+    // watch: {
+    //     '$route.params.mailId'(id) {
+    //         console.log('Changed to', id);
+    //         this.loadMail();
+    //     }
+    // }
 }
