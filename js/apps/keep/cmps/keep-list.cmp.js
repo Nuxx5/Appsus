@@ -1,15 +1,17 @@
 import keepPreview from './keep-preview.cmp.js'
 
 export default {
+    name: 'keep-list',
     props: ['notes'],
     template: `
     <ul class="note-list">
         <li v-for="note in notes" :key="note.id" class="note-preview-container" >
-            <keep-preview :note="note" @click.native="logId(note.id)" />
             <div class="btns-container">
-                <button @click="remove(keep.id)">X</button>
+                 <p>{{note.id}}</p>
+                <button @click="remove(note.id)">X</button>
                 <!-- <button @click="select(note)">Details</button> -->
-                <router-link :to="'/keep/'+keep.id">Details</router-link>
+                <!-- @click.native="logId(note.id)" -->
+                <router-link :to="'/keep/'+note.id">Details</router-link>
             </div>
         </li>
     </ul>
@@ -27,5 +29,8 @@ export default {
     },
     components:{
         keepPreview
+    },
+    created() {
+        console.log(this.notes);
     }
 }

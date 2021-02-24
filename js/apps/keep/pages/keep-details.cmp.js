@@ -2,24 +2,11 @@ import { keepService } from "../services/keep.service.js";
 // import addReview from '../cmps/add-review.cmp.js'
 
 export default {
+    name: 'keep-details',
     template:`
-    <section v-if="book" class="book-details">
-        <p>{{note.info.txt}}
-        <!-- <img :src="book.thumbnail">
-        <img :src="onSale">
-        <p>Title: {{book.title}}</p>
-        <div v-for="author in book.authors">Author: {{author}}</div>
-        <p>Publish Date: {{book.publishedDate}} {{agedBook}}</p>
-        <p>Description: {{book.description.substr(0,100)}}</p>
-        <div v-for="review in book.reviews">Reviews: {{review}}</div>
-        <p>Page count: {{book.pageCount}} {{pageCount}}</p>
-        <p>Category: {{book.categories.toLocaleString()}}</p>
-        <p>Language: {{book.language}}</p>
-        <p>Price: <span v-bind:class="setColor">{{book.listPrice.amount}} {{book.listPrice.currencyCode}}</span></p>
-        <add-review :reviews="book.reviews"/> -->
-        <router-link to="/book">Back</router-link>
-        <!-- <router-link :to="nextBookLink">Next Book</router-link>
-        <router-link :to="PrevBookLink">Previous Book</router-link> -->
+    <section v-if="note" class="keep-details">
+        <p>{{note.info.txt}}</p>
+        <router-link to="/keep">Back</router-link>
     </section>
     `,
     data () {
@@ -74,18 +61,19 @@ export default {
     },
 
     created() {
-        const id = this.$route.params.noteId
-        keepService.getById(id)
-            .then(note => {
-                this.note = note
-                // this.nextBookId = bookService.getNextBookId(book.id)
-    })
+        this.loadNote()
+    //     const id = this.$route.params.noteId
+    //     keepService.getById(id)
+    //         .then(note => {
+    //             this.note = note
+    //             // this.nextBookId = bookService.getNextBookId(book.id)
+    // })
 },
 
-watch: {
-    '$route.params.noteId'(id) {
-        console.log('Changed to', id);
-        this.loadNote();
-    }
-}
+// watch: {
+//     '$route.params.noteId'(id) {
+//         console.log('Changed to', id);
+//         this.loadNote();
+//     }
+// }
 }
