@@ -11,7 +11,7 @@ export default {
                 <div class="btns-container">
                     <!-- <button @click="remove(mail.id)">X</button> -->
                     <!-- <button @click="select(book)">Details</button> -->
-                    <!-- <router-link :to="'/mail/'+mail.id">Details</router-link> -->
+                    <router-link :to="'/mail/'+mail.id">Details</router-link>
                 </div>
             </li>
         </ul>

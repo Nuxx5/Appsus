@@ -6,7 +6,8 @@ const gMails = _createMails();
 
 
 export const emailService = {
-    query
+    query,
+    getById
 
 }
 
@@ -21,6 +22,10 @@ function query() {
     //         }
     //         return books;
     //     })
+}
+
+function getById(id) {
+    return storageService.get(MAILS_KEY, id)
 }
 
 function _createMails() {
