@@ -15,8 +15,41 @@ export default {
             <!-- <book-edit /> -->
         </section>
     `,
+    data() {
+        return {
+            notes: [],
+            selectedNote: null,
+            filterBy: null
+        }
+    },
+    methods: {
+        removeNote(noteId) {
+            noteService.remove(noteId)
+        },
+        selectNote(note) {
+            this.selectedNote = note
+        },
+        setFilter(filterBy) {
+            this.filterBy = filterBy
+        }
+    },
+    computed: {
+        notesToShow() {
+            if (!this.filterBy) return this.note
+            const searchStr = this.filterBy.byTitle.toLowerCase()
+            var notesToShow = this.notes.filter(note => {
+                return note.title.toLowerCase().includes(searchStr)
+            })
+            notesToShow = notesToShow.filter(note => { 
+                return (note.listPrice.amount > this.filterBy.fromPrice && book.listPrice.amount < this.filterBy.toPrice)
+            })
+            return notesToShow
+        }
+    },
     components: {
         keepFilter,
         keepList,
+        keepDetails,
+        keepCompose
     }
 }
