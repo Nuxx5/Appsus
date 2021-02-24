@@ -9,7 +9,7 @@ export default {
     template: `
         <section class="keep-app">
             <!-- <keep-filter @filtered="setFilter" /> -->
-            <router-link to="/keep/add">Add a new note!</router-link>
+            <!-- <router-link to="/keep/add">Add a new note!</router-link> -->
             <keep-list :notes="notesToShow" @selected="selectNote" />
             <!-- <book-details v-if="selectedBook" :book="selectedBook" @close="selectedBook = null" /> -->
             <!-- <book-edit /> -->
@@ -23,6 +23,11 @@ export default {
         }
     },
     methods: {
+        loadNotes() {
+            console.log('loadNotes');
+            this.notes = keepService.query();
+            console.log('notes', this.notes);
+        },
         removeNote(noteId) {
             noteService.remove(noteId)
         },
@@ -44,7 +49,7 @@ export default {
             //     return (note.listPrice.amount > this.filterBy.fromPrice && book.listPrice.amount < this.filterBy.toPrice)
             // })
             // return notesToShow
-            return this.notes;
+            return this.notes
         }
     },
     components: {
@@ -52,5 +57,8 @@ export default {
         keepList,
         keepDetails,
         keepCompose
-    }
+    },
+    created() {
+        this.loadNotes();
+    },
 }
