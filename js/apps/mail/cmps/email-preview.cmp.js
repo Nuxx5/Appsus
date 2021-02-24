@@ -1,8 +1,11 @@
 export default {
-    name: 'email-list',
+    name: 'email-preview',
+    props: ['mail'],
     template: `
-    <section>
-        <h1>preview</h1>
+    <section class="email-preview">
+        <p v-if="!mail.isRead" class="unread">{{mail.subject}}</p>
+        <p v-else="mail.isRead" class="read">{{mail.subject}}</p>
+        <!-- <p>{{mail.body}}</p> -->
     </section>
     `
 }
