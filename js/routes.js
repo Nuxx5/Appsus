@@ -3,6 +3,7 @@ import keepApp from './apps/keep/pages/keep-app.cmp.js'
 import keepDetails from './apps/keep/pages/keep-details.cmp.js'
 import emailApp from './apps/mail/pages/email-app.cmp.js'
 import emailDetails from './apps/mail/pages/email-details.cmp.js'
+import emailAdd from './apps/mail/pages/email-add.cmp.js'
 import about from './pages/about.cmp.js'
 
 const routes = [
@@ -29,6 +30,10 @@ const routes = [
     {
         path: '/mail/:emailId',
         component: emailDetails
+    },
+    {
+        path: '/mail/add',
+        component: emailAdd
     },
 ]
 
