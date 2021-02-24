@@ -2,7 +2,7 @@ export default {
     template: `
     <header class="app-header">
         <div class="header">
-            <h1>Books</h1>
+            <h1>Appsus</h1>
         </div>
         <nav>
             <router-link to="/" exact>Home</router-link> |
