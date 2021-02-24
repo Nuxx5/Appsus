@@ -1,23 +1,8 @@
-@import "apps/keep/cmps/keep-compose.cmp.css";
 
-@import "apps/keep/cmps/keep-filter.cmp.css";
-
-@import "apps/keep/cmps/keep-list.cmp.css";
-@import "apps/keep/cmps/keep-long-text.cmp.css";
-@import "apps/keep/cmps/keep-preview.cmp.css";
-@import "apps/keep/cmps/user-msg.cmp.css";
 @import "apps/keep/pages/keep-app.cmp.css";
-@import "apps/keep/pages/keep-details.cmp.css";
-@import "apps/mail/cmps/email-compose.cmp.css";
-@import "apps/mail/cmps/email-filter.cmp.css";
-@import "apps/mail/cmps/email-list.cmp.css";
-@import "apps/mail/cmps/email-preview.cmp.css";
-@import "apps/mail/cmps/email-status.cmp.css";
-@import "apps/mail/cmps/long-text.cmp.css";
-@import "apps/mail/cmps/user-msg.cmp.css";
 @import "apps/mail/pages/email-app.cmp.css";
-@import "apps/mail/pages/email-details.cmp.css";
-
+@import "./long-text.cmp.css";
+@import "./user-msg.cmp.css";
 
 *{
     box-sizing: border-box;
