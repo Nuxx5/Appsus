@@ -5,8 +5,17 @@ const NOTES_KEY = 'notes'
 const gNotes = _createNotes()
 
 export const keepService = {
-    _createNotes
+    query,
+    getById
 }
+
+function query(){
+    return gNotes
+}
+
+function getById(id) {
+    // return storageService.get(NOTES_KEY, id)
+  }
 
 function _createNotes() {
     let notes = utilService.loadFromStorage(NOTES_KEY)

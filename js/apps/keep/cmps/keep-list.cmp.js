@@ -7,9 +7,9 @@ export default {
         <li v-for="note in notes" :key="note.id" class="note-preview-container" >
             <keep-preview :note="note" @click.native="logId(note.id)" />
             <div class="btns-container">
-                <!-- <button @click="remove(book.id)">X</button> -->
-                <!-- <button @click="select(book)">Details</button> -->
-                <!-- <router-link :to="'/keep/'+keep.id">Details</router-link> -->
+                <button @click="remove(keep.id)">X</button>
+                <!-- <button @click="select(note)">Details</button> -->
+                <router-link :to="'/keep/'+keep.id">Details</router-link>
             </div>
         </li>
     </ul>

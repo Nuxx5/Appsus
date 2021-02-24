@@ -8,15 +8,57 @@ export default {
     name: 'keep-app',
     template: `
         <section class="keep-app">
-            <keep-filter @filtered="setFilter" />
+            <!-- <keep-filter @filtered="setFilter" /> -->
             <router-link to="/keep/add">Add a new note!</router-link>
             <keep-list :notes="notesToShow" @selected="selectNote" />
             <!-- <book-details v-if="selectedBook" :book="selectedBook" @close="selectedBook = null" /> -->
             <!-- <book-edit /> -->
         </section>
     `,
+    data() {
+        return {
+            notes: [],
+            selectedNote: null,
+            filterBy: null
+        }
+    },
+    methods: {
+        loadNotes() {
+            console.log('loadNotes');
+            this.notes = keepService.query();
+            console.log('notes', this.notes);
+        },
+        removeNote(noteId) {
+            noteService.remove(noteId)
+        },
+        selectNote(note) {
+            this.selectedNote = note
+        },
+        setFilter(filterBy) {
+            this.filterBy = filterBy
+        }
+    },
+    computed: {
+        notesToShow() {
+            // if (!this.filterBy) return this.note
+            // const searchStr = this.filterBy.byTitle.toLowerCase()
+            // var notesToShow = this.notes.filter(note => {
+            //     return note.title.toLowerCase().includes(searchStr)
+            // })
+            // notesToShow = notesToShow.filter(note => { 
+            //     return (note.listPrice.amount > this.filterBy.fromPrice && book.listPrice.amount < this.filterBy.toPrice)
+            // })
+            // return notesToShow
+            return this.notes
+        }
+    },
     components: {
         keepFilter,
         keepList,
-    }
+        keepDetails,
+        keepCompose
+    },
+    created() {
+        this.loadNotes();
+    },
 }
