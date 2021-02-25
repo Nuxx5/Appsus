@@ -38,22 +38,22 @@ function _createNotes() {
         notes = [
             {
                 id: utilService.makeId(),
-                type: 'txt',
+                type: 'Txt',
                 isPinned: true,
                 contents: "Fullstack Me Baby!"
             },
             {
                 id: utilService.makeId(),
-                type: 'img',
-                contents: "https://cataas.com/cat/says/hello%20world!",
+                type: 'Img',
+                contents: "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg",
                    
             },
-            {
-                id: utilService.makeId(),
-                type: 'video',
-                contents: "https://www.youtube.com/watch?v=VugasBUoBdI&feature=youtu.be",
+            // {
+            //     id: utilService.makeId(),
+            //     type: 'Video',
+            //     contents: "https://www.youtube.com/watch?v=VugasBUoBdI&feature=youtu.be",
                    
-            },
+            // },
         ]
         utilService.saveToStorage(NOTES_KEY, notes)
     }

@@ -43,16 +43,16 @@ export default {
     },
     computed: {
         notesToShow() {
-            // if (!this.filterBy) return this.note
-            // const searchStr = this.filterBy.byTitle.toLowerCase()
-            // var notesToShow = this.notes.filter(note => {
-            //     return note.title.toLowerCase().includes(searchStr)
-            // })
+            if (!this.filterBy) return this.notes
+            const searchStr = this.filterBy.byTxt.toLowerCase()
+            var notesToShow = this.notes.filter(note => {
+                return note.contents.toLowerCase().includes(searchStr)
+            })
             // notesToShow = notesToShow.filter(note => { 
             //     return (note.listPrice.amount > this.filterBy.fromPrice && book.listPrice.amount < this.filterBy.toPrice)
             // })
             // return notesToShow
-            return this.notes
+            return notesToShow
         }
     },
     components: {

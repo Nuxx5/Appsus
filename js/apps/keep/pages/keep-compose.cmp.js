@@ -11,10 +11,10 @@ export default {
             <input class="keep-input" v-model="note.contents"
                 placeholder="Add a new note" @keyup.enter="saveNote">
             <div class="btn-container">
-                <button class="compose-btn" @click="changeType('txt')">📝</i></button>
-                <button class="compose-btn" @click="changeType('img')">🖼️</i></button>
-                <button class="compose-btn" @click="changeType('todo')">📋</i></button>
-                <button class="compose-btn" @click="changeType('video')">🎦</i></button>
+                <button class="compose-btn" @click="changeType('Txt')">📝</i></button>
+                <button class="compose-btn" @click="changeType('Img')">🖼️</i></button>
+                <button class="compose-btn" @click="changeType('Todo')">📋</i></button>
+                <button class="compose-btn" @click="changeType('Video')">🎦</i></button>
                 <button class="compose-btn" @click="saveNote()">💾</i></button>
             </div>
         </section> 

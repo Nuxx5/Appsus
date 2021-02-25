@@ -2,17 +2,18 @@ import { keepService } from '../services/keep.service.js'
 
 export default {
     name: 'keep-txt',
-    props: ['keep'],
+    props: ['note'],
     template: `
     <section class="keep-txt">
-        <textarea class="keep-txtarea" id="text-area" v-if="note" v-model="note.txt" ref="textarea" :style="bgcChange" @click="editNote" @blur="saveNote">
+        {{note.contents}}
+        <!-- <textarea class="keep-txtarea" id="text-area" v-if="note" v-model="note.txt" ref="textarea" :style="bgcChange" @click="editNote" @blur="saveNote">
 
-        </textarea>
+        </textarea> -->
         </section> 
     `,
     data() {
         return {
-           note: null,
+        //    note: null,
            isEdit: false
         }
     },
@@ -27,8 +28,8 @@ export default {
             }  
         },
     },
-    created() {
-        this.note = this.keep
-    },
+    // created() {
+    //     this.note = this.keep
+    // },
  
 }   
