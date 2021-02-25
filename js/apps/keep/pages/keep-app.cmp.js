@@ -2,7 +2,7 @@ import { keepService } from '../services/keep.service.js'
 import keepFilter from '../cmps/keep-filter.cmp.js'
 import keepList from '../cmps/keep-list.cmp.js'
 import keepDetails from './keep-details.cmp.js'
-import keepCompose from '../cmps/keep-compose.cmp.js'
+import keepCompose from './keep-compose.cmp.js'
 
 export default { 
     name: 'keep-app',
