@@ -1,3 +1,9 @@
+.email-preview{
+    height: 60px;
+    width: 400px;
+    border: 1px solid lightgray;
+}
+
 .unread{
     font-weight: bold;
     padding: 10px;
