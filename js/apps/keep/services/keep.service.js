@@ -7,11 +7,21 @@ const gNotes = _createNotes()
 export const keepService = {
     query,
     getById,
-    remove
+    remove,
+    save,
+    edit
 }
 
 function query(){
     return storageService.query(NOTES_KEY)
+}
+
+function edit(note) {
+    return storageService.put(NOTES_KEY, note)
+}
+
+function save(note) {
+    return storageService.post(NOTES_KEY, note)
 }
 
 function getById(id) {
@@ -28,32 +38,22 @@ function _createNotes() {
         notes = [
             {
                 id: utilService.makeId(),
-                type: "NoteTxt",
+                type: 'txt',
                 isPinned: true,
-                info: {
-                    txt: "Fullstack Me Baby!"
-                }
+                contents: "Fullstack Me Baby!"
             },
             {
                 id: utilService.makeId(),
-                type: "NoteImg",
-                info: {
-                    url: "https://cataas.com/cat/says/hello%20world!",
-                    title: "Me Cat Mi"
-                },
-                style: {
-                    backgroundColor: "#00d"
-                }
+                type: 'img',
+                contents: "https://cataas.com/cat/says/hello%20world!",
+                   
             },
             {
                 id: utilService.makeId(),
-                type: "NoteTodos", info: {
-                    label: "How was it:", todos: [
-                        { txt: "Do that", doneAt: null },
-                        { txt: "Do this", doneAt: 187111111 }
-                    ]
-                }
-            }
+                type: 'video',
+                contents: "https://www.youtube.com/watch?v=VugasBUoBdI&feature=youtu.be",
+                   
+            },
         ]
         utilService.saveToStorage(NOTES_KEY, notes)
     }

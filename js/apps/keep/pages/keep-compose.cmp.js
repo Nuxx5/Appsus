@@ -1,22 +1,45 @@
 import { keepService } from '../services/keep.service.js'
+import keepTxt from '../cmps/keep-txt.cmp.js';
+import keepImg from '../cmps/keep-img.cmp.js';
+import keepTodo from '../cmps/keep-todo.cmp.js';
+import keepVideo from '../cmps/keep-video.cmp.js';
 
 export default { 
     name: 'keep-compose',
     template: `
         <section class="keep-compose">
-            <input class="keep-input" v-model="note.data"
-                placeholder="Add a new note" @click="saveNote">
+            <input class="keep-input" v-model="note.contents"
+                placeholder="Add a new note" @keyup.enter="saveNote">
             <div class="btn-container">
-                <button class="keep-compose-btn txt-btn" @click="setKeepType('txt')">📝</i></button>
-                <button class="keep-compose-btn img-btn" @click="setKeepType('img')">🖼️</i></button>
-                <button class="keep-compose-btn todo-btn" @click="setKeepType('todo')">📋</i></button>
-                <button class="keep-compose-btn img-btn" @click="setKeepType('video')">🎦</i></button>
+                <button class="compose-btn" @click="changeType('txt')">📝</i></button>
+                <button class="compose-btn" @click="changeType('img')">🖼️</i></button>
+                <button class="compose-btn" @click="changeType('todo')">📋</i></button>
+                <button class="compose-btn" @click="changeType('video')">🎦</i></button>
+                <button class="compose-btn" @click="saveNote()">💾</i></button>
             </div>
         </section> 
     `,
      data() {
         return {
-            note: null
+            note: {
+                contents: null,
+                type: 'txt'
+            },
         }
     },
+    methods: {
+        changeType(type) {
+            this.note.type = type
+        },
+        saveNote() {
+            keepService.save(this.note)
+            .then(() => (this.$emit('loadNotes')) )
+        }
+    },
+    components: {
+        keepTxt,
+        keepImg,
+        keepTodo,
+        keepVideo,
+    }
 }

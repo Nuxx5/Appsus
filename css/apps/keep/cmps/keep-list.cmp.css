@@ -32,6 +32,12 @@ justify-content: center;
 
 .remove-btn {
     position: absolute;
-    top: 0;
-    right: 0;
+    bottom: 0;
+    right: 0;    
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;      
 }
