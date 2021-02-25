@@ -6,26 +6,31 @@ export default {
     template: `
     <section>
         <ul class="email-list">
-            <li v-for="mail in mails" :key="mail.id" class="mail-preview-container" >
-                <email-preview :mail="mail" @click.native="logId(mail.subject)" />
-                <div class="btns-container">
+            <li v-for="mail in mails" :key="mail.id" class="email-list-container" >
+                <email-preview :mail="mail" @click.native="select(mail.id)" />
+                <!-- <div class="btns-container"> -->
                     <!-- <button @click="remove(mail.id)">X</button> -->
                     <!-- <button @click="select(book)">Details</button> -->
-                    <router-link :to="'/mail/'+mail.id">Details</router-link>
-                </div>
+                    <!-- <email-details @showList="showMails" /> -->
+                    <!-- <router-link :to="'/mail/'+mail.id" tag="div">Details</router-link> -->
+                <!-- </div> -->
             </li>
         </ul>
     </section>
     `,
     methods: {
-        remove(mailId) {
-            this.$emit('remove', mailId);
+        // remove(mailId) {
+        //     this.$emit('remove', mailId);
+        // },
+        showMails(){
+            console.log('showMails');
         },
-        select(mail) {
-            this.$emit('selected', mail);
-        },
-        logId(mailId) {
-            this.$emit('loged', mailId);
+        // select(mail) {
+        //     this.$emit('selected', mail);
+        // },
+        select(mailId) {
+            // this.$emit('loged', mailId);
+            this.$router.push('/mail/'+mailId)
         }
     },
     components:{

@@ -1,21 +1,24 @@
 import { emailService } from '../services/email.service.js';
+import emailNav from '../cmps/email-nav.cmp.js';
 
 
 export default {
     name: 'email-details',
     // props: ['mail'],
     template: `
-    <section  v-if="mail" class="email-details">
-        <p>Subject: {{mail.subject}}</p>
-        <p>Subject: </p>
-        <router-link to="/mail">Back</router-link>
+    <section v-if="mail" class="email-details">
+        <email-nav />
+        <div class="email-details-content">
+            <p>Subject: {{mail.subject}}</p>
+            <button @click="remove(mail.id)">X</button>
+            <router-link to="/mail">Back</router-link>
+        </div>
     </section>
     `,
-   
     data() {
         return {
             // descLength: null,
-            mail: null,
+            mail: null
         }
     },
     methods: {
@@ -25,7 +28,13 @@ export default {
             emailService.getById(mailId)
                 .then(mail => {
                     this.mail = mail;
+                    console.log('mail', this.mail);
                 });
+        },
+        remove(mailId) {
+            emailService.remove(mailId)
+                .then(this.$router.push('/mail'))
+                // .then(this.$emit('showList'));
         }
     },
     created() {
@@ -37,4 +46,7 @@ export default {
     //         this.loadMail();
     //     }
     // }
+    components: {
+        emailNav
+    }
 }

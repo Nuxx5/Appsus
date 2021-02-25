@@ -5,3 +5,25 @@
 @import "../cmps/email-preview.cmp.css";
 @import "../cmps/email-status.cmp.css";
 
+.email-app {
+    display: flex;
+    justify-content: space-between;
+}
+
+.email-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.email-compose-btn {
+    padding: 20px;
+}
+
+.email-nav-btn {
+    padding: 10px;
+}
+
+.email-main-content {
+    margin-right: 100px;
+    margin-top: 20px ;
+}
