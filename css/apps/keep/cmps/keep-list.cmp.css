@@ -1,0 +1,37 @@
+.keep-list {
+list-style: none;
+margin: auto;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(3, 200px);
+grid-template-rows: auto;
+gap: 20px;
+justify-content: center;
+}
+
+/* .note-preview-container {
+    margin: auto;
+} */
+
+.note-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: rgb(9, 130, 170);
+    text-align: center;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

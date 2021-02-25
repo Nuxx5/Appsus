@@ -4,11 +4,11 @@ export default {
     name: 'keep-list',
     props: ['notes'],
     template: `
-    <ul class="note-list">
+    <ul class="keep-list grid">
         <li v-for="note in notes" :key="note.id" class="note-preview-container" >
-            <div class="btns-container">
-                 <p>{{note.id}}</p>
-                <button @click="remove(note.id)">X</button>
+            <div class="note-container btns-container">
+                <p>{{note.id}}</p>
+                <button class="remove-btn" @click="remove(note.id)">X</button>
                 <!-- <button @click="select(note)">Details</button> -->
                 <!-- @click.native="logId(note.id)" -->
                 <router-link :to="'/keep/'+note.id">Details</router-link>

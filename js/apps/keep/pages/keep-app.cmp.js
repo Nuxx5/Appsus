@@ -8,9 +8,9 @@ export default {
     name: 'keep-app',
     template: `
         <section class="keep-app">
-            <!-- <keep-filter @filtered="setFilter" /> -->
-            <!-- <router-link to="/keep/add">Add a new note!</router-link> -->
-            <keep-list :notes="notesToShow" @selected="selectNote" />
+            <keep-filter @filtered="setFilter" />
+            <router-link to="/keep/add">Add a new note!</router-link>
+            <keep-list :notes="notesToShow" @selected="selectNote" @remove="removeNote" />
             <!-- <book-details v-if="selectedBook" :book="selectedBook" @close="selectedBook = null" /> -->
             <!-- <book-edit /> -->
         </section>
@@ -25,11 +25,13 @@ export default {
     methods: {
         loadNotes() {
             console.log('loadNotes');
-            this.notes = keepService.query();
+            keepService.query()
+            .then(notes => this.notes = notes)
             console.log('notes', this.notes);
         },
         removeNote(noteId) {
-            noteService.remove(noteId)
+            keepService.remove(noteId)
+            .then(() => this.loadNotes())
         },
         selectNote(note) {
             this.selectedNote = note

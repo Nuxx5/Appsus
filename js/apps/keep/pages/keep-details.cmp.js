@@ -6,6 +6,7 @@ export default {
     template:`
     <section v-if="note" class="keep-details">
         <p>{{note.info.txt}}</p>
+        <!-- <button @click="remove(note.id)">X</button> -->
         <router-link to="/keep">Back</router-link>
     </section>
     `,
@@ -29,6 +30,10 @@ export default {
                 })
 
         },
+        remove(noteId) {
+            keepService.remove(noteId)
+            .then(this.loadNote()) 
+        }
     },
     computed: {
         // pageCount() {
