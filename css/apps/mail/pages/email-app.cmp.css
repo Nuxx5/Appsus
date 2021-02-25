@@ -4,3 +4,9 @@
 @import "../cmps/email-list.cmp.css";
 @import "../cmps/email-preview.cmp.css";
 @import "../cmps/email-status.cmp.css";
+
+
+.keep-app {
+  text-align: center;
+  margin: auto;
+}

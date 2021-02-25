@@ -5,13 +5,13 @@ export default {
     name: 'email-details',
     // props: ['mail'],
     template: `
-    <section  class="email-details">
+    <section  v-if="mail" class="email-details">
         <p>Subject: {{mail.subject}}</p>
         <p>Subject: </p>
         <router-link to="/mail">Back</router-link>
     </section>
     `,
-    // v-if="mail"
+   
     data() {
         return {
             // descLength: null,
