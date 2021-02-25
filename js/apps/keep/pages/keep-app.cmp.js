@@ -9,7 +9,8 @@ export default {
     template: `
         <section class="keep-app">
             <keep-filter @filtered="setFilter" />
-            <router-link to="/keep/add">Add a new note!</router-link>
+            <keep-compose @loadNotes="loadNotes"/>
+            <!-- <router-link to="/keep/add">Add a new note!</router-link> -->
             <keep-list :notes="notesToShow" @selected="selectNote" @remove="removeNote" />
             <!-- <book-details v-if="selectedBook" :book="selectedBook" @close="selectedBook = null" /> -->
             <!-- <book-edit /> -->
