@@ -3,3 +3,9 @@
 @import "../cmps/keep-list.cmp.css";
 @import "../cmps/keep-preview.cmp.css";
 @import "../pages/keep-details.cmp.css";
+
+
+.keep-app {
+    text-align: center;
+    margin: auto;
+  }
