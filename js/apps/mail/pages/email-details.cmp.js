@@ -10,6 +10,10 @@ export default {
         <email-nav />
         <div class="email-details-content">
             <p>Subject: {{mail.subject}}</p>
+            <p>From: {{mail.from}}</p>
+            <p>To: {{mail.to}}</p>
+            <p>{{setTime}}</p>
+            <p>{{mail.body}}</p>
             <button @click="remove(mail.id)">X</button>
             <router-link to="/mail">Back</router-link>
         </div>
@@ -35,6 +39,12 @@ export default {
             emailService.remove(mailId)
                 .then(this.$router.push('/mail'))
                 // .then(this.$emit('showList'));
+        }
+    },
+    computed: {
+        setTime() {
+            const time = new Date(this.mail.sentAt).toLocaleString();
+            return time;
         }
     },
     created() {

@@ -2,6 +2,7 @@ import { emailService } from '../services/email.service.js';
 import emailFilter from '../cmps/email-filter.cmp.js';
 import emailList from '../cmps/email-list.cmp.js';
 import emailNav from '../cmps/email-nav.cmp.js';
+import emaiCompose from './email-compose.cmp.js';
 
 
 export default {
@@ -64,6 +65,7 @@ export default {
     components: {
         emailFilter,
         emailList,
-        emailNav
+        emailNav,
+        emaiCompose
     }
 }
