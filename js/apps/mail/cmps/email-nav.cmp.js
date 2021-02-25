@@ -1,3 +1,5 @@
+import emaiCompose from '../pages/email-compose.cmp.js';
+
 
 export default {
     name: 'email-nav',
@@ -9,5 +11,8 @@ export default {
                 <router-link class="email-nav-btn" to="/mail/sent">Sent mail</router-link>
                 <router-link class="email-nav-btn" to="/mail/draft">Draft</router-link>
             </div>
-    `
+    `,
+    components: {
+        emaiCompose,
+    }
 }
