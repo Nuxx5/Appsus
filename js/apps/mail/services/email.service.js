@@ -8,7 +8,9 @@ const gMails = _createMails();
 export const emailService = {
     query,
     getById,
-    remove
+    remove,
+    save,
+    getEmptyMail
 
 }
 
@@ -31,6 +33,22 @@ function remove(mailId) {
 
 function getById(id) {
     return storageService.get(MAILS_KEY, id)
+}
+
+function save(mail) {
+    return storageService.post(MAILS_KEY, mail)
+}
+
+function getEmptyMail() {
+    return {
+        id: '',
+        from: 'Bari',
+        to: '',
+        subject: '',
+        body: '',
+        isRead: true,
+        sentAt: Date.now()
+    }
 }
 
 function _createMails() {

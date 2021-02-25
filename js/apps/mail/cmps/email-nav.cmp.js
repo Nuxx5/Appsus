@@ -1,4 +1,4 @@
-import emaiCompose from '../pages/email-compose.cmp.js';
+// import emailCompose from '../pages/email-compose.cmp.js';
 
 
 export default {
@@ -13,6 +13,6 @@ export default {
             </div>
     `,
     components: {
-        emaiCompose,
+        // emailCompose,
     }
 }

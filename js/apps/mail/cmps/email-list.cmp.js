@@ -4,24 +4,28 @@ export default {
     name: 'email-list',
     props: ['mails'],
     template: `
-    <section>
-        <ul class="email-list">
-            <li v-for="mail in mails" :key="mail.id" class="email-list-container" >
+    <section class="email-list">
+        <ul>
+            <li v-for="mail in mails" :key="mail.id"  class="email-list-item" >
                 <email-preview :mail="mail" @click.native="select(mail.id)" />
-                <!-- <div class="btns-container"> -->
-                    <!-- <button @click="remove(mail.id)">X</button> -->
+                <div class="email-list-btns">
+                    <button @click="addStar(mail.id)">⭐✰</button>
+                    <button @click="remove(mail.id)">🗑️</button>
                     <!-- <button @click="select(book)">Details</button> -->
                     <!-- <email-details @showList="showMails" /> -->
                     <!-- <router-link :to="'/mail/'+mail.id" tag="div">Details</router-link> -->
-                <!-- </div> -->
+                </div>
             </li>
         </ul>
     </section>
     `,
     methods: {
-        // remove(mailId) {
-        //     this.$emit('remove', mailId);
-        // },
+        remove(mailId) {
+            this.$emit('remove', mailId);
+        },
+        addStar(){
+            console.log('addStar');
+        },
         showMails(){
             console.log('showMails');
         },
@@ -30,6 +34,7 @@ export default {
         // },
         select(mailId) {
             // this.$emit('loged', mailId);
+            console.log('select', mailId);
             this.$router.push('/mail/'+mailId)
         }
     },

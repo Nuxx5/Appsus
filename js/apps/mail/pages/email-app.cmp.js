@@ -9,7 +9,6 @@ export default {
     name: 'email-app',
     template: `
         <section class="email-app">
-            <email-nav />
             <!-- <div class="email-nav">
                 <router-link class="email-compose-btn" to="/mail/add">Compose</router-link>
                 <router-link class="email-nav-btn" to="/mail">Inbox</router-link>
@@ -17,8 +16,9 @@ export default {
                 <router-link class="email-nav-btn" to="/mail/sent">Sent mail</router-link>
                 <router-link class="email-nav-btn" to="/mail/draft">Draft</router-link>
             </div> -->
+            <email-filter @filtered="setFilter" />
             <div class="email-main-content">
-                <email-filter @filtered="setFilter" />
+                <email-nav />
                 <email-list :mails="mailsToShow" @remove="removeMail" @selected="selectMail" @loged="logedMail" />
             </div>
             <!-- <book-details v-if="selectedBook" :book="selectedBook" @close="selectedBook = null" /> -->
@@ -40,7 +40,9 @@ export default {
                 })
         },
         removeMail(mailId) {
-            emailService.remove(mailId);
+            emailService.remove(mailId)
+                .then(this.loadMails)
+            // .then(this.$router.push('/mail'))
         },
         selectMail(mail) {
             this.selectedMail = mail;

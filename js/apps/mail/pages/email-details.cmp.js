@@ -14,7 +14,7 @@ export default {
             <p>To: {{mail.to}}</p>
             <p>{{setTime}}</p>
             <p>{{mail.body}}</p>
-            <button @click="remove(mail.id)">X</button>
+            <button @click="remove(mail.id)">🗑️</button>
             <router-link to="/mail">Back</router-link>
         </div>
     </section>

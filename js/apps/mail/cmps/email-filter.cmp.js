@@ -4,7 +4,6 @@ export default {
     name: 'email-filter',
     template: `
     <section class="email-filter">
-        <!-- <label> Search a mail: </label>     -->
         <input type="text" @input="setFilter" placeholder="Search mail" v-model="filterBy.byName">
         <select name="filter" id="filter" v-model="filterBy.byRead">
                 <option value="subject" selected>All</option>

@@ -33,12 +33,12 @@ const routes = [
         component: emailApp
     },
     {
-        path: '/mail/:mailId',
-        component: emailDetails
-    },
-    {
         path: '/mail/add',
         component: emailCompose
+    },
+    {
+        path: '/mail/:mailId',
+        component: emailDetails
     },
 ]
 
