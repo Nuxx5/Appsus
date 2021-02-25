@@ -16,7 +16,7 @@ export default {
                 <router-link class="email-nav-btn" to="/mail/sent">Sent mail</router-link>
                 <router-link class="email-nav-btn" to="/mail/draft">Draft</router-link>
             </div> -->
-            <email-filter @filtered="setFilter" />
+            <email-filter @filtered="setFilter" @sorted="setSort" />
             <div class="email-main-content">
                 <email-nav />
                 <email-list :mails="mailsToShow" @remove="removeMail" @selected="selectMail" @loged="logedMail" />
@@ -28,12 +28,12 @@ export default {
         return {
             mails: [],
             selectedMail: null,
-            filterBy: null
+            filterBy: null,
+            sortBy: null
         }
     },
     methods: {
         loadMails() {
-            console.log('loadMails');
             this.mails = emailService.query()
                 .then(mails => {
                     this.mails = mails;
@@ -48,7 +48,10 @@ export default {
             this.selectedMail = mail;
         },
         setFilter(filterBy) {
-            this.filterBy = filterBy
+            this.filterBy = filterBy;
+        },
+        setSort(sortBy) {
+            this.sortBy = sortBy;
         },
         logedMail(mailId) {
             console.log('mail id is:', mailId);
@@ -56,9 +59,24 @@ export default {
     },
     computed: {
         mailsToShow() {
-            var mailsToShow2 = this.mails;
-            console.log('mailsToShow', mailsToShow2);
-            return mailsToShow2;
+            if (!this.filterBy) return this.mails;
+            const searchStr = this.filterBy.bySubject.toLowerCase();
+            var mailsToShow = this.mails.filter(mail => {
+                return mail.subject.toLowerCase().includes(searchStr)
+            })
+            if (this.filterBy.byRead === 'read') {
+                mailsToShow = mailsToShow.filter(mail => {
+                    return mail.isRead
+                })
+            } else if (this.filterBy.byRead === 'unRead') {
+                mailsToShow = mailsToShow.filter(mail => {
+                    return !mail.isRead
+                })
+            }
+            if(this.sortBy === 'date'){
+                console.log('sort date');
+            } else console.log('sort subject');
+            return mailsToShow;
         }
     },
     created() {

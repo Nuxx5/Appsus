@@ -4,30 +4,33 @@ export default {
     name: 'email-filter',
     template: `
     <section class="email-filter">
-        <input type="text" @input="setFilter" placeholder="Search mail" v-model="filterBy.byName">
-        <select name="filter" id="filter" v-model="filterBy.byRead">
-                <option value="subject" selected>All</option>
+        <input type="text" @input="setFilter" placeholder="Search mail" v-model="filterBy.bySubject">
+        <select name="filter" id="filter" @input="setFilter" v-model="filterBy.byRead">
+                <option value="all" selected>All</option>
                 <option value="read">Read</option>
-                <option value="unread">Unread</option>
+                <option value="unRead">Unread</option>
         </select>
-        <select name="sort" id="sort" v-model="sort">
-                <option value="subject" selected>Subject</option>
-                <option value="date">Date</option>
+        <select name="sort" id="sort" @input="setSort" v-model="sortBy">
+                <option value="date" selected>Date</option>
+                <option value="subject">Subject</option>
         </select>
     </section>
     `,
     data() {
         return {
             filterBy: {
-                byName: '',
-                byRead: null,
+                bySubject: '',
+                byRead: 'all',
             },
-            sort: null
+            sortBy: 'date'
         }
     },
     methods: {
         setFilter() {
             this.$emit('filtered', this.filterBy)
+        },
+        setSort() {
+            this.$emit('sorted', this.sortBy)
         }
     }
 }

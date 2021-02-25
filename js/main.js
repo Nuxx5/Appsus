@@ -1,5 +1,3 @@
-console.log('main');
-
 import appHeader from './cmps/app-header.cmp.js';
 import appFooter from './cmps/app-footer.cmp.js';
 import { myRouter } from './routes.js';
