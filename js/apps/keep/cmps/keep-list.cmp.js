@@ -3,6 +3,7 @@ import keepTxt from '../cmps/keep-txt.cmp.js';
 import keepImg from '../cmps/keep-img.cmp.js';
 import keepTodo from '../cmps/keep-todo.cmp.js';
 import keepVideo from '../cmps/keep-video.cmp.js';
+import keepAudio from '../cmps/keep-audio.cmp.js';
 
 export default {
     name: 'keep-list',
@@ -37,7 +38,8 @@ export default {
         keepTxt,
         keepImg,
         keepVideo,
-        keepTodo
+        keepTodo,
+        keepAudio
     },
     created() {
         console.log(this.notes);
