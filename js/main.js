@@ -1,5 +1,5 @@
 import appHeader from './cmps/app-header.cmp.js';
-import appFooter from './cmps/app-footer.cmp.js';
+// import appFooter from './cmps/app-footer.cmp.js';
 import { myRouter } from './routes.js';
 
 const options = {
@@ -9,12 +9,12 @@ const options = {
         <section>
             <app-header />
             <router-view />
-            <app-footer />
+            <!-- <app-footer /> -->
         </section>
     `,
     components: {
         appHeader,
-        appFooter,
+        // appFooter,
     }
 }
 

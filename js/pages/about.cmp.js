@@ -1,3 +1,5 @@
+import appFooter from '../cmps/app-footer.cmp.js';
+
 export default {
     name: 'about',
     template: `
@@ -6,5 +8,9 @@ export default {
         <p>
             Ran and Bari
         </p>
-    </section>`
+        <app-footer />
+    </section>`,
+    components: {
+        appFooter
+    }
 }

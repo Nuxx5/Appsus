@@ -32,7 +32,12 @@ export default {
             emailService.getById(mailId)
                 .then(mail => {
                     this.mail = mail;
+                    this.mail.isRead = true;
                     console.log('mail', this.mail);
+                    emailService.edit(this.mail)
+                    .then(mail => {
+                        this.mail = mail;
+                    })
                 });
         },
         remove(mailId) {

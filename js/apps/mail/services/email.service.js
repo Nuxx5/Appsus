@@ -10,6 +10,7 @@ export const emailService = {
     getById,
     remove,
     save,
+    edit,
     getEmptyMail
 
 }
@@ -39,6 +40,10 @@ function save(mail) {
     return storageService.post(MAILS_KEY, mail)
 }
 
+function edit(mail) {
+    return storageService.put(MAILS_KEY, mail)
+}
+
 function getEmptyMail() {
     return {
         id: '',
@@ -47,6 +52,7 @@ function getEmptyMail() {
         subject: '',
         body: '',
         isRead: true,
+        isStarred: false,
         sentAt: Date.now()
     }
 }
@@ -62,6 +68,7 @@ function _createMails() {
                 subject: 'Wassap?',
                 body: 'As Moti told you, you should not leave your dog outside, his making a lot of noise.',
                 isRead: true,
+                isStarred: false,
                 sentAt: 1551133930594
             },
             {
@@ -71,6 +78,7 @@ function _createMails() {
                 subject: 'Hey',
                 body: 'Are you sure? I did not notice that today is holidy. I went to work and the office was closed.',
                 isRead: false,
+                isStarred: false,
                 sentAt: 1614254707784
             },
             {
@@ -80,6 +88,7 @@ function _createMails() {
                 subject: 'Need to do',
                 body: 'Please pick the kids from school. They are waiting for you for more than two hours.',
                 isRead: true,
+                isStarred: true,
                 sentAt: 1614154707784
             },
             {
@@ -89,6 +98,7 @@ function _createMails() {
                 subject: 'Good news',
                 body: 'I think you should check your mail. I heard someone is looking for you around the block.',
                 isRead: false,
+                isStarred: false,
                 sentAt: 1610154707784
             },
             {
@@ -98,6 +108,7 @@ function _createMails() {
                 subject: 'About the car',
                 body: 'Hi, how is this car? I heard that Subayo is a great car, like shown on TV that can go everywere and very comfortable for the family.',
                 isRead: false,
+                isStarred: true,
                 sentAt: 1581133930394
             },
             {
@@ -107,6 +118,7 @@ function _createMails() {
                 subject: 'About Javascript',
                 body: 'Do you familiar with a master in Javascript? I think maybe, not so far, you would not need one, because you will be one.',
                 isRead: false,
+                isStarred: false,
                 sentAt: 1600133930474
             }
 

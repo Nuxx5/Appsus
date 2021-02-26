@@ -2,6 +2,7 @@
 
 export default {
     name: 'email-filter',
+    props: ['count'],
     template: `
     <section class="email-filter">
         <input type="text" @input="setFilter" placeholder="Search mail" v-model="filterBy.bySubject">
@@ -14,6 +15,7 @@ export default {
                 <option value="date" selected>Date</option>
                 <option value="subject">Subject</option>
         </select>
+        <span>✉{{count}}</span>
     </section>
     `,
     data() {

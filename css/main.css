@@ -9,9 +9,10 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-body {
+body, html {
     margin: 0;
     height: 100%;
+    /* position: relative; */
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -36,13 +37,17 @@ h1, h2, h3, h4, h5, h6, p {
     height: 50px;
     text-align: center;
     line-height: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 /* HOMEPAGE */
 
-.home.app-main, .about {
+.home-page {
     background-image: url('../img/appsus.jpg');
-    height: 100vh;
+    height: 95vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -50,5 +55,10 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .about {
+    background-image: url('../img/appsus.jpg');
+    height: 95vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
 }
