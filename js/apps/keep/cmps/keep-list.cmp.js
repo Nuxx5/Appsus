@@ -11,17 +11,25 @@ export default {
     template: `
     <ul class="keep-list grid">
         <li v-for="note in notes" :key="note.id" class="note-preview-container" >
-            <div class="note-container btns-container">
+            <div class="note-container btns-container" :style="setColor">
                 <!-- <p>{{note.contents}}</p> -->
-                <component :is="'keep'+note.type" :note="note"></component>
+                <component :is="'keep'+note.type" :note="note" :style="setColor"></component>
                 <button class="remove-btn" @click="remove(note.id)">🗑️</button>
-                <!-- <button @click="select(note)">Details</button> -->
+                <input type="color" @input="changeColor($event)">
                 <!-- @click.native="logId(note.id)" -->
                 <!-- <router-link :to="'/keep/'+note.id">Details</router-link> -->
             </div>
         </li>
     </ul>
     `,
+    data() {
+        return {
+            bgcColor: null,
+            color: {
+                code: null,
+            }
+        }
+    },
     methods: {
         remove(noteId) {
             this.$emit('remove', noteId)
@@ -31,9 +39,21 @@ export default {
         },
         logId(noteId) {
             console.log('Id is', noteId);
+        },
+        changeColor(e) {
+            this.color.code = e.target.value
+            console.log(e)
+            console.log(e.target.value)
         }
     },
-    components:{
+    computed: {
+        setColor() {
+            return {
+                'background-color': this.color.code
+            }
+        }
+    },
+    components: {
         keepPreview,
         keepTxt,
         keepImg,

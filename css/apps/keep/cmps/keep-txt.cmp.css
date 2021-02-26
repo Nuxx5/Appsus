@@ -5,3 +5,7 @@
     text-align-last: center; 
     vertical-align: middle;
 }
+
+.long-text {
+    max-width: 300px;
+}
