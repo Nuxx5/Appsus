@@ -1,5 +1,6 @@
 import { emailService } from '../services/email.service.js';
 import emailNav from '../cmps/email-nav.cmp.js';
+import { eventBus } from '../../../services/event-bus.service.js';
 
 export default {
     name: 'email-compose',
@@ -23,11 +24,28 @@ export default {
         }
     },
     methods: {
-        saveMail(){
+        saveMail() {
             emailService.save(this.mail)
-            .then(this.$router.push('/mail'))
-            // .then(() => (this.$emit('loadMails')))
+                .then(this.mail.isSent = true)
+                .then(mail => {
+                    console.log('Saved mail:', mail);
+                    const msg = {
+                        txt: 'Mail saved succesfully',
+                        type: 'success'
+                    }
+                    eventBus.$emit('show-msg', msg)
+                    this.$router.push('/mail')
+                })
+                .catch(err => {
+                    console.log(err);
+                    const msg = {
+                        txt: 'Error, please try again later',
+                        type: 'error'
+                    }
+                    eventBus.$emit('show-msg', msg)
+                })
         }
+
     },
     created() {
         this.mail = emailService.getEmptyMail();

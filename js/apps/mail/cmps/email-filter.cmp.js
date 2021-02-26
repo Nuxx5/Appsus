@@ -32,6 +32,7 @@ export default {
             this.$emit('filtered', this.filterBy)
         },
         setSort() {
+            console.log('this.sortBy', this.sortBy);
             this.$emit('sorted', this.sortBy)
         }
     }

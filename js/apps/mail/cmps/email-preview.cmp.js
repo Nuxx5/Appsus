@@ -21,11 +21,12 @@ export default {
         }
     },
     methods: {
-        remove(mailId) {
-            emailService.remove(mailId)
-                .then(this.$router.push('/mail'))
+        // remove(mailId) {
+        //     emailService.remove(mailId)
+        //         .then(this.$router.push('/mail'))
+
                 // .then(this.$emit('showList'));
-        }
+        // }
     },
     computed: {
         setTime() {

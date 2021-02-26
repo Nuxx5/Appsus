@@ -19,7 +19,7 @@ export default {
             <email-filter :count="setStatus" @filtered="setFilter" @sorted="setSort" />
             <!-- <email-filter @filtered="setFilter" @sorted="setSort" /> -->
             <div class="email-main-content">
-                <email-nav />
+                <email-nav @navFiltered="setNavFilter" />
                 <!-- <p>{{setStatus}}</p> -->
                 <email-list :mails="mailsToShow" @setStar="setStar" @setRead="setRead" @remove="removeMail" @selected="selectMail" @loged="logedMail" />
             </div>
@@ -32,6 +32,7 @@ export default {
             selectedMail: null,
             filterBy: null,
             sortBy: null,
+            navFilterBy: null,
             isMails: false
         }
     },
@@ -71,15 +72,19 @@ export default {
         setSort(sortBy) {
             this.sortBy = sortBy;
         },
+        setNavFilter(navFilterBy) {
+            this.navFilterBy = navFilterBy;
+        },
         logedMail(mailId) {
             console.log('mail id is:', mailId);
         }
     },
     computed: {
         mailsToShow() {
-            if (!this.sortBy && !this.filterBy) return this.mails;
+            if(!this.isMails) return;
+            // if (!this.sortBy && !this.filterBy) return this.mails;
+            var mailsToShow = this.mails;
             if (this.sortBy) {
-                var mailsToShow = this.mails;
                 if (this.sortBy === 'date') {
                     mailsToShow = this.mails.sort((mail1, mail2) => {
                         return mail1.subject.localeCompare(mail2.subject);
@@ -103,7 +108,24 @@ export default {
                     })
                 }
             }
-
+            if (this.navFilterBy) {
+                // console.log('navFilterBy', this.navFilterBy);
+                if (this.navFilterBy === 'inbox') {
+                    mailsToShow = mailsToShow;
+                } else if (this.navFilterBy === 'starred') {
+                    mailsToShow = mailsToShow.filter(mail => {
+                        return mail.isStarred
+                    })
+                } else if(this.navFilterBy === 'sent') {
+                    mailsToShow = mailsToShow.filter(mail => {
+                        return mail.isSent
+                    })
+                } else if(this.navFilterBy === 'trash') {
+                    mailsToShow = mailsToShow.filter(mail => {
+                        return mail.isTrash
+                    })
+                }
+            }
             return mailsToShow;
         },
         setStatus() {

@@ -1,0 +1,12 @@
+.user-msg {
+    background-color: white;
+    position: absolute;
+    padding: 10px;
+    top: 0;
+    right: 0;
+    min-width: 200px;
+}
+
+.user-msg button {
+    float: right;
+}
