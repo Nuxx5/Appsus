@@ -1,6 +1,6 @@
 import { emailService } from '../services/email.service.js';
 import emailNav from '../cmps/email-nav.cmp.js';
-
+import longText  from '../../../cmps/long-text.cmp.js';
 
 export default {
     name: 'email-details',
@@ -13,7 +13,8 @@ export default {
             <p>From: {{mail.from}}</p>
             <p>To: {{mail.to}}</p>
             <p>{{setTime}}</p>
-            <p>{{mail.body}}</p>
+            <!-- <p>{{mail.body}}</p> -->
+            <long-text :txt="mail.body" />
             <button @click="remove(mail.id)">🗑️</button>
             <router-link to="/mail">Back</router-link>
         </div>
@@ -62,6 +63,7 @@ export default {
     //     }
     // }
     components: {
-        emailNav
+        emailNav,
+        longText
     }
 }
