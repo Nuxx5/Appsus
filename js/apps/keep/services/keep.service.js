@@ -51,11 +51,18 @@ function _createNotes() {
             {
                 id: utilService.makeId(),
                 type: 'Video',
-                contents: "https://www.youtube.com/watch?v=VugasBUoBdI&feature=youtu.be",
+                contents: "https://www.youtube.com/watch?v=EykdLqt7q34",
                    
+            },
+            {
+                id: utilService.makeId(),
+                type: 'Audio',
+                contents: "../../../../audio/ringtone.mp3",
             },
         ]
         utilService.saveToStorage(NOTES_KEY, notes)
     }
     return notes
 }
+
+"/media/cc0-audio/t-rex-roar.mp3"

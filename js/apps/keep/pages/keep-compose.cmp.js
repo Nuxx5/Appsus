@@ -3,6 +3,7 @@ import keepTxt from '../cmps/keep-txt.cmp.js';
 import keepImg from '../cmps/keep-img.cmp.js';
 import keepTodo from '../cmps/keep-todo.cmp.js';
 import keepVideo from '../cmps/keep-video.cmp.js';
+import keepAudio from '../cmps/keep-audio.cmp.js';
 
 export default { 
     name: 'keep-compose',
@@ -15,6 +16,7 @@ export default {
                 <button title="image" class="compose-btn" @click="changeType('Img')">🖼️</i></button>
                 <button title="to-do" class="compose-btn" @click="changeType('Todo')">📋</i></button>
                 <button title="video" class="compose-btn" @click="changeType('Video')">🎦</i></button>
+                <button title="audio" class="compose-btn" @click="changeType('Audio')">🔊</i></button>
                 <button title="save" class="compose-btn" @click="saveNote()">💾</i></button>
             </div>
         </section> 
@@ -35,6 +37,7 @@ export default {
             else if (type === 'Img') this.placeholderContents = 'insert image url'
             else if (type === 'Todo') this.placeholderContents = 'write your to-do list'
             else if (type === 'Video') this.placeholderContents = 'insert Youtube url'
+            else if (type === 'Audio') this.placeholderContents = 'insert mp3 url'
             if (this.note.contents) this.saveNote()
         },
         saveNote() {
@@ -50,5 +53,6 @@ export default {
         keepImg,
         keepTodo,
         keepVideo,
+        keepAudio
     }
 }

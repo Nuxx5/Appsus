@@ -5,8 +5,8 @@ export default {
     props: ['note'],
     template: `
     <section @click="editNote" class="keep-txt">
-        {{note.contents}}>
-        <textarea class="keep-txtarea" rows="16" cols="60" id="text-area" v-if="edit" v-model="note.contents" ref="textarea"  @blur="saveNote">
+        {{note.contents}}
+        <textarea class="keep-textarea" rows="15" cols="45" id="text-area" v-if="edit" v-model="note.contents" ref="textarea"  @blur="saveNote">
         
         </textarea>
         </section> 
@@ -28,6 +28,9 @@ export default {
             }  
         },
     },
+    mounted(){
+        this.$refs.textarea.focus()
+    }
     // created() {
     //     this.note = this.keep
     // },
