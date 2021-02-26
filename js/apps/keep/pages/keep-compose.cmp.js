@@ -1,4 +1,5 @@
 import { keepService } from '../services/keep.service.js'
+import { eventBus } from '../../../services/event-bus.service.js';
 import keepTxt from '../cmps/keep-txt.cmp.js';
 import keepImg from '../cmps/keep-img.cmp.js';
 import keepTodo from '../cmps/keep-todo.cmp.js';
@@ -43,7 +44,24 @@ export default {
         saveNote() {
             keepService.save(this.note)
             .then(() => this.note.contents = null)
-            .then(() => (this.$emit('loadNotes')) )
+            .then(note => {
+                console.log('Saved note:', note);
+                const msg = {
+                    txt: 'Note saved successfully',
+                    type: 'success'
+                }
+                eventBus.$emit('show-msg', msg)
+                this.$emit('loadNotes')
+            })
+            .catch(err => {
+                console.log(err);
+                const msg = {
+                    txt: 'Error, please try again later',
+                    type: 'error'
+                }
+                eventBus.$emit('show-msg', msg)
+            })
+            // .then(() => (this.$emit('loadNotes')) )
             
 
         }

@@ -1,5 +1,7 @@
 .keep-textarea {
     background: none;
     border: none;
-    text-align: center;
+    text-align: justified;
+    text-align-last: center; 
+    vertical-align: middle;
 }

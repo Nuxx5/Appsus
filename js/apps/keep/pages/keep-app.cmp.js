@@ -1,4 +1,5 @@
 import { keepService } from '../services/keep.service.js'
+import { eventBus } from '../../../services/event-bus.service.js';
 import keepFilter from '../cmps/keep-filter.cmp.js'
 import keepList from '../cmps/keep-list.cmp.js'
 import keepDetails from './keep-details.cmp.js'
@@ -32,7 +33,24 @@ export default {
         },
         removeNote(noteId) {
             keepService.remove(noteId)
-            .then(() => this.loadNotes())
+            .then(note => {
+                console.log('deleted note:', note);
+                const msg = {
+                    txt: 'Note deleted successfully',
+                    type: 'success'
+                }
+                eventBus.$emit('show-msg', msg)
+                this.loadNotes()
+            })
+            .catch(err => {
+                console.log(err);
+                const msg = {
+                    txt: 'Error, please try again later',
+                    type: 'error'
+                }
+                eventBus.$emit('show-msg', msg)
+            })
+            // .then(() => this.loadNotes())
         },
         selectNote(note) {
             this.selectedNote = note
