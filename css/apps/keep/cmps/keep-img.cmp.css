@@ -1,4 +1,5 @@
 .img-note {
-    height: 30px;
-    width:30px;
+    height: 240px;
+    width:320px;
+    object-fit: cover;
 }

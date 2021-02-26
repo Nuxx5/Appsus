@@ -8,32 +8,41 @@ export default {
     name: 'keep-compose',
     template: `
         <section class="keep-compose">
-            <input class="keep-input" v-model="note.contents"
-                placeholder="Add a new note" @keyup.enter="saveNote">
+            <input class="keep-input" onfocus="value=''" v-model="note.contents"
+                :placeholder="placeholderContents" @keyup.enter="saveNote">
             <div class="btn-container">
-                <button class="compose-btn" @click="changeType('Txt')">📝</i></button>
-                <button class="compose-btn" @click="changeType('Img')">🖼️</i></button>
-                <button class="compose-btn" @click="changeType('Todo')">📋</i></button>
-                <button class="compose-btn" @click="changeType('Video')">🎦</i></button>
-                <button class="compose-btn" @click="saveNote()">💾</i></button>
+                <button title="text" class="compose-btn" @click="changeType('Txt')">📝</i></button>
+                <button title="image" class="compose-btn" @click="changeType('Img')">🖼️</i></button>
+                <button title="to-do" class="compose-btn" @click="changeType('Todo')">📋</i></button>
+                <button title="video" class="compose-btn" @click="changeType('Video')">🎦</i></button>
+                <button title="save" class="compose-btn" @click="saveNote()">💾</i></button>
             </div>
         </section> 
     `,
      data() {
         return {
             note: {
-                contents: null,
-                type: 'txt'
+                type: 'txt',
+                contents: null
             },
+            placeholderContents: 'write your note here'
         }
     },
     methods: {
         changeType(type) {
             this.note.type = type
+            if (type === 'Txt') this.placeholderContents = 'write your note here'
+            else if (type === 'Img') this.placeholderContents = 'insert image url'
+            else if (type === 'Todo') this.placeholderContents = 'write your to-do list'
+            else if (type === 'Video') this.placeholderContents = 'insert Youtube url'
+            if (this.note.contents) this.saveNote()
         },
         saveNote() {
             keepService.save(this.note)
+            .then(() => this.note.contents = null)
             .then(() => (this.$emit('loadNotes')) )
+            
+
         }
     },
     components: {

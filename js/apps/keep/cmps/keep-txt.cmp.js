@@ -4,27 +4,27 @@ export default {
     name: 'keep-txt',
     props: ['note'],
     template: `
-    <section class="keep-txt">
-        {{note.contents}}
-        <!-- <textarea class="keep-txtarea" id="text-area" v-if="note" v-model="note.txt" ref="textarea" :style="bgcChange" @click="editNote" @blur="saveNote">
-
-        </textarea> -->
+    <section @click="editNote" class="keep-txt">
+        {{note.contents}}>
+        <textarea class="keep-txtarea" rows="16" cols="60" id="text-area" v-if="edit" v-model="note.contents" ref="textarea"  @blur="saveNote">
+        
+        </textarea>
         </section> 
     `,
     data() {
         return {
         //    note: null,
-           isEdit: false
+           edit: false
         }
     },
     methods: {
         editNote() {
-             this.editMode = true
+             this.edit = true
         },
         saveNote() {
-            if (this.editMode === true) {
+            if (this.edit === true) {
                 keepService.edit(this.note)
-                this.editMode = false
+                .then(() => this.edit = false)
             }  
         },
     },
