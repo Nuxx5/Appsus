@@ -15,7 +15,7 @@ export default {
                 <!-- <p>{{note.contents}}</p> -->
                 <component :is="'keep'+note.type" :note="note" :style="setColor(note)"></component>
                 <button v-if="note.isPinned" class="pin-btn" @click="pin(note, note.id)" title="unpin note"><i class="fas fa-thumbtack"></i></button>
-                <button v-if="!note.isPinned" class="pin-btn" @click="pin(note, note.id)" title="pin note"><i class="fas fa-thumbtack"></i></button>
+                <button v-else="!note.isPinned" class="pin-btn" @click="pin(note, note.id)" title="pin note"><i class="fas fa-thumbtack"></i></button>
                 <button class="remove-btn" @click="remove(note, note.id)" title="remove note"><i class="far fa-trash-alt"></i></button>
                 <div><i class="fas fa-paint-brush color-palete"></i></div>
                 <input type="color" class="color-btn" title="color" @input="changeColor(note, $event)">

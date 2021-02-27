@@ -17,6 +17,18 @@
     outline:none;
     height: 33px;
     width: 33px;
+    font-size: 1rem;
+}
+.far.fa-image {
+    font-size: 1.6rem;
+}
+
+.fab.fa-youtube {
+    font-size: 1.6rem;
+}
+
+.fas.fa-volume-up {
+    font-size: 1.5rem;
 }
 
 .btn-container {

@@ -1,6 +1,6 @@
 .email-filter {
     text-align: center;
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 .input-btn {
@@ -36,6 +36,11 @@
     height: 50px;
     color: lightslategray;
     font-size: 1.5rem;
+}
+
+.count-envelope {
+ padding-top: 5px;
+ color: lightslategray;
 }
 
 @media only screen and (max-width:650px){

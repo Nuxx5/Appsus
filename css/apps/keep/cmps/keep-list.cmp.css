@@ -40,7 +40,8 @@ margin-top: 20px;
     border: none;
     cursor:pointer;
     overflow: hidden;
-    outline:none;      
+    outline:none; 
+    font-size: 0.7rem;     
 }
 
 .pin-btn {

@@ -40,10 +40,18 @@ button {
     outline: none;
 }
 
-.star{
-    width: 22px;
+.inbox-white-star{
+    font-size: 1rem;
+}
+
+.inbox-black-star{
+    font-size: 1rem;
 }
 
 .read-btn{
+    width: 28px;
+}
+
+.star {
     width: 25px;
 }

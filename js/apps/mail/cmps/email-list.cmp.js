@@ -9,11 +9,11 @@ export default {
             <li v-for="mail in mails" :key="mail.id"  class="email-list-item" >
                 <email-preview :mail="mail" @click.native="select(mail.id)" />
                 <div class="email-list-btns">
-                    <button class="star" v-if="!mail.isStarred" @click="setStar(mail)">✰</button>
-                    <button class="star" v-else="mail.isStarred" @click="setStar(mail)">⭐</button>
-                    <button class="read-btn" v-if="!mail.isRead" @click="setRead(mail)">✉</button>
-                    <button class="read-btn" v-if="mail.isRead" @click="setRead(mail)">📨</button>
-                    <button @click="remove(mail.id)">🗑️</button>
+                    <button class="star" v-if="!mail.isStarred" @click="setStar(mail)"><i class="far fa-star inbox-white-star"></i></button>
+                    <button class="star" v-else="mail.isStarred" @click="setStar(mail)"><i class="fas fa-star inbox-black-star"></i></button>
+                    <button class="read-btn" v-if="!mail.isRead" @click="setRead(mail)"><i class="far fa-envelope"></i></button>
+                    <button class="read-btn" v-if="mail.isRead" @click="setRead(mail)"><i class="far fa-envelope-open"></i></button>
+                    <button @click="remove(mail.id)"><i class="far fa-trash-alt"></i></button>
                     <!-- <button @click="select(book)">Details</button> -->
                     <!-- <email-details @showList="showMails" /> -->
                     <!-- <router-link :to="'/mail/'+mail.id" tag="div">Details</router-link> -->
