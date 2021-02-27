@@ -13,7 +13,7 @@ export const keepService = {
     pin
 }
 
-function query(){
+function query() {
     return storageService.query(NOTES_KEY)
 }
 
@@ -27,9 +27,9 @@ function save(note) {
 
 function getById(id) {
     return storageService.get(NOTES_KEY, id)
-  }
+}
 
-  function remove(noteId) {
+function remove(noteId) {
     return storageService.remove(NOTES_KEY, noteId)
 }
 
@@ -54,7 +54,7 @@ function _createNotes() {
                 isPinned: false,
                 color: '#FF7F50',
                 contents: "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg",
-                   
+
             },
             {
                 id: utilService.makeId(),
@@ -62,7 +62,7 @@ function _createNotes() {
                 isPinned: false,
                 color: '#556B2F',
                 contents: "https://www.youtube.com/watch?v=EykdLqt7q34",
-                   
+
             },
             {
                 id: utilService.makeId(),
@@ -84,9 +84,9 @@ function _createNotes() {
                 isPinned: false,
                 color: '#ADD8E6',
                 contents: "https://images.pexels.com/photos/1936299/pexels-photo-1936299.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                   
+
             },
-            
+
         ]
         utilService.saveToStorage(NOTES_KEY, notes)
     }

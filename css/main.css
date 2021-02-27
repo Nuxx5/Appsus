@@ -56,6 +56,7 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 3rem;
     color: rgb(55, 78, 152)
 }
+
 .about {
     background-image: url('../img/pencils.jpg');
     height: 95vh;
@@ -81,42 +82,17 @@ h1, h2, h3, h4, h5, h6, p {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-      text-align: center;
-      margin: auto;
-      height: 95vh;
-    }
+    text-align: center;
+    margin: auto;
+    height: 95vh;
+}
 
-    .email-app {
-        background-color: lightyellow;
-          height: 95vh;
-        }
-/* view-port Large screen */
+.email-app {
+    background-color: lightyellow;
+    height: 95vh;
+}
 
 @media only screen and (max-width: 750px) {
-    /* .main-header .main-nav {
-        position: fixed;
-        right: 0;
-        top: 0;
-        flex-direction: column;
-        height: 100vh;
-        background-color: #FF7F00;
-        width: 140px;
-        transform: translateX(100%);
-        box-shadow: none;
-        transition: transform .8s, box-shadow .8s;
-    } */
-    /* .main-nav .nav-btn {
-        width: 100%;
-        height: 60px;
-        border-right: none;
-        border-left: none;
-        color: #ffffffe0;
-        box-shadow: #040A2C 0px -1px inset;
-    } */
-    /* .nav-btn:hover {
-        color: #040A2C;
-        box-shadow: #040A2C 5px -1px inset;
-    } */
     .main-screen {
         visibility: hidden;
         opacity: 0;
@@ -129,6 +105,4 @@ h1, h2, h3, h4, h5, h6, p {
         transition: opacity 0.8s;
         cursor: pointer;
     }
-
-
 }

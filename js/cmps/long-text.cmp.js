@@ -14,7 +14,7 @@ export default {
             isAllTxtShown: false,
         }
     },
-    methods:{
+    methods: {
         toggleDesc() {
             this.isAllTxtShown = !this.isAllTxtShown
         }

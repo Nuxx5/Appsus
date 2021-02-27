@@ -2,10 +2,6 @@
     background: none;
     border: none;
     text-align: justified;
-    text-align-last: center; 
+    text-align-last: center;
     vertical-align: middle;
 }
-
-/* .long-text {
-    max-width: 300px;
-} */
