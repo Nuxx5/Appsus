@@ -37,3 +37,13 @@
     color: lightslategray;
     font-size: 1.5rem;
 }
+
+@media only screen and (max-width:650px){
+    .input-btn {
+        width: 200px;
+    }
+
+    .sort-btn {
+        margin-right: 50px;
+    }
+}

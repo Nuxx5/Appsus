@@ -8,16 +8,26 @@ const options = {
     router: myRouter,
     template: `
         <section>
+        <div class="main-screen" :class="menuOpen" @click="toggleMenu"></div>
             <user-msg />
             <app-header />
             <router-view />
             <!-- <app-footer /> -->
         </section>
     `,
+    data() {
+        return {
+            menuOpen: false,
+        }
+    },
+    methods: {
+        toggleMenu() {
+            this.menuOpen = !this.menuOpen;
+        }
+    },
     components: {
         appHeader,
         userMsg
-        // appFooter,
     }
 }
 
