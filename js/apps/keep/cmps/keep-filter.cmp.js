@@ -2,7 +2,7 @@ export default {
     template: `
     <section class="keep-filter">
         <!-- <label> Search a note: </label>     -->
-        <input type="text" @input="setFilter" placeholder="Search...." v-model="filterBy.byTxt">
+        <input class="search-input" type="text" @input="setFilter" placeholder="Search...." v-model="filterBy.byTxt">
     </section>
     `,
     data() {

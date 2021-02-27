@@ -9,6 +9,7 @@ grid-template-columns: repeat(3, 400px);
 grid-template-rows: auto;
 gap: 20px;
 justify-content: center;
+margin-top: 20px;
 }
 
 /* .note-preview-container {
@@ -52,4 +53,23 @@ justify-content: center;
     cursor:pointer;
     overflow: hidden;
     outline:none;      
+}
+
+.color-btn {
+    position: absolute;
+    bottom: 0;
+    left: 160px;    
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;  
+    opacity: 0;    
+}
+
+.color-palete {
+    position: absolute;
+    bottom: 0;
+    left: 160px; 
 }
