@@ -1,10 +1,8 @@
-
 @import "apps/keep/pages/keep-app.cmp.css";
 @import "apps/mail/pages/email-app.cmp.css";
 @import "./long-text.cmp.css";
 @import "./user-msg.cmp.css";
-
-*{
+* {
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -20,7 +18,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* HEADER */
 
-.app-header{
+.app-header {
     background-color: rgb(9, 102, 156);
     padding: 10px;
     height: 5vh;
@@ -64,8 +62,50 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* view-port Large screen */
 
-@media only screen and (max-width: 750px){
-    .main-nav{
-        
+@media only screen and (max-width: 750px) {
+    /* .main-header .main-nav {
+        position: fixed;
+        right: 0;
+        top: 0;
+        flex-direction: column;
+        height: 100vh;
+        background-color: #FF7F00;
+        width: 140px;
+        transform: translateX(100%);
+        box-shadow: none;
+        transition: transform .8s, box-shadow .8s;
+    } */
+    /* .main-nav .nav-btn {
+        width: 100%;
+        height: 60px;
+        border-right: none;
+        border-left: none;
+        color: #ffffffe0;
+        box-shadow: #040A2C 0px -1px inset;
+    } */
+    /* .nav-btn:hover {
+        color: #040A2C;
+        box-shadow: #040A2C 5px -1px inset;
+    } */
+    .main-screen {
+        visibility: hidden;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 30%);
+        transition: opacity 0.8s;
+        cursor: pointer;
     }
+    /* .menu-open .main-nav {
+        transform: translateX(0);
+    } */
+    /* .menu-open .main-screen {
+        opacity: 1;
+        visibility: visible;
+    } */
+
+
 }

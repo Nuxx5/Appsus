@@ -12,5 +12,5 @@ export default {
             <!-- <router-link to="/mail">Books</router-link> -->
         </nav>
     </header>
-    `
+    `,
 }
