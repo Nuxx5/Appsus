@@ -74,7 +74,7 @@ export default {
         },
         pinNote(noteId){
             keepService.pin(noteId)
-
+            .then(() => this.loadNotes())
         },
         selectNote(note) {
             this.selectedNote = note

@@ -34,7 +34,7 @@ function getById(id) {
 }
 
 function pin(noteId) {
-
+    return storageService.pin(NOTES_KEY, noteId)
 }
 
 function _createNotes() {

@@ -5,7 +5,8 @@ export const storageService = {
     post,
     put,
     remove,
-    postMany
+    postMany,
+    pin
 }
 
 function query(entityType) {
@@ -45,6 +46,19 @@ function put(entityType, updatedEntity) {
             _save(entityType, entities)
             return updatedEntity;
         })
+}
+
+function pin(entityType, entityId) {
+    return query(entityType)
+        .then(entities => 
+            {const idx = entities.findIndex(entity => entity.id === entityId)
+                const currNote = entities[idx]
+                const copyNote = {...currNote}
+                entities.splice(idx,1)
+                entities.unshift(copyNote)
+                _save(entityType, entities)
+                return entities
+            })
 }
 
 function remove(entityType, entityId) {

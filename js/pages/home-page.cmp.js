@@ -4,7 +4,7 @@ export default {
     template:`
     <section class="home-page">
         <h1 class="home-text">Appsus</h1>
-        <p>Welcome to your new digital orgaziner!<i class="fab fa-accessible-icon"></i></p>
+        <p>Welcome to your new digital orgaziner!</p>
         <app-footer />
     </section>
     `,
