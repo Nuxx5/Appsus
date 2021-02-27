@@ -119,11 +119,11 @@ function _createMails() {
                 to: 'Bari',
                 subject: 'About Javascript',
                 body: 'Do you familiar with a master in Javascript? I think maybe, not so far, you would not need one, because you will be one.',
-                isRead: false,
+                isRead: true,
                 isStarred: false,
                 isSent: false,
                 isTrash: false,
-                sentAt: 1600133930474
+                sentAt: 1600132930474
             },
             {
                 id: utilService.makeId(),
@@ -135,7 +135,7 @@ function _createMails() {
                 isStarred: true,
                 isSent: false,
                 isTrash: false,
-                sentAt: 1600133930474
+                sentAt: 1600133939474
             },
             {
                 id: utilService.makeId(),
@@ -147,7 +147,43 @@ function _createMails() {
                 isStarred: true,
                 isSent: true,
                 isTrash: false,
-                sentAt: 1600133930474
+                sentAt: 1602133930474
+            },
+            {
+                id: utilService.makeId(),
+                from: 'Dan',
+                to: 'Bari',
+                subject: 'Take a look at this',
+                body: 'I know you probably know that, but just in case you missed it...',
+                isRead: true,
+                isStarred: true,
+                isSent: false,
+                isTrash: false,
+                sentAt: 1600135530474
+            },
+            {
+                id: utilService.makeId(),
+                from: 'Bari',
+                to: 'Joe',
+                subject: 'Maybe you saw alison',
+                body: 'Did you talked to Alison lately. She went to visit someone abroad like a month ago, and I did not heard from here. Maybe you know what is with here.',
+                isRead: true,
+                isStarred: false,
+                isSent: true,
+                isTrash: false,
+                sentAt: 1602335530474
+            },
+            {
+                id: utilService.makeId(),
+                from: 'Matan',
+                to: 'Bari',
+                subject: 'Reservation #123',
+                body: 'We ordered the appartment on the second floor for three nights, and now we saw that the reservation is not confirmed. What happend?',
+                isRead: false,
+                isStarred: true,
+                isSent: false,
+                isTrash: false,
+                sentAt: 1602335777474
             }
 
         ]
