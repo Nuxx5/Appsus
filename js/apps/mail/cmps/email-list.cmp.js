@@ -9,10 +9,10 @@ export default {
             <li v-for="mail in mails" :key="mail.id"  class="email-list-item" >
                 <email-preview :mail="mail" @click.native="select(mail.id)" />
                 <div class="email-list-btns">
-                    <button v-if="!mail.isStarred" @click="setStar(mail)">✰</button>
-                    <button v-else="mail.isStarred" @click="setStar(mail)">⭐</button>
-                    <button v-if="!mail.isRead" @click="setRead(mail)">✉</button>
-                    <button v-if="mail.isRead" @click="setRead(mail)">📨</button>
+                    <button class="star" v-if="!mail.isStarred" @click="setStar(mail)">✰</button>
+                    <button class="star" v-else="mail.isStarred" @click="setStar(mail)">⭐</button>
+                    <button class="read-btn" v-if="!mail.isRead" @click="setRead(mail)">✉</button>
+                    <button class="read-btn" v-if="mail.isRead" @click="setRead(mail)">📨</button>
                     <button @click="remove(mail.id)">🗑️</button>
                     <!-- <button @click="select(book)">Details</button> -->
                     <!-- <email-details @showList="showMails" /> -->
@@ -48,7 +48,7 @@ export default {
         // },
         select(mailId) {
             // this.$emit('loged', mailId);
-            console.log('select', mailId);
+            // console.log('select', mailId);
             this.$router.push('/mail/' + mailId)
         }
     },

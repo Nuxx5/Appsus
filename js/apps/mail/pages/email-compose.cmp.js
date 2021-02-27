@@ -1,21 +1,29 @@
 import { emailService } from '../services/email.service.js';
 import emailNav from '../cmps/email-nav.cmp.js';
+import emailFilter from '../cmps/email-filter.cmp.js';
 import { eventBus } from '../../../services/event-bus.service.js';
 
 export default {
     name: 'email-compose',
     template: `
     <section class="email-compose">
+        <!-- <email-filter /> -->
+        <div class="email-compose-content">
         <email-nav />
-        <form @submit.prevent="saveMail" class="email-compose-content">
-            <h1>New message</h1>
-            <label>To </label>
-            <input type="text" placeholder="" v-model="mail.to" />
+        <form @submit.prevent="saveMail" class="email-compose-form">
+            <h1 class="compose-header">New message</h1>
+            <div class="compose-to">
+                <label>To </label>
+                <input type="text" placeholder="" v-model="mail.to" />
+            </div>
+            <div class="compose-to">
             <label>Subject </label>
             <input type="text" placeholder="" v-model="mail.subject" />
-            <textarea cols="30" rows="10" v-model="mail.body"></textarea>
-            <button>Save</button>
+            </div>
+            <textarea cols="30" rows="20" v-model="mail.body"></textarea>
+            <button class="compose-save-btn">SEND</button>
         </form>
+        </div>
     </section>
     `,
     data() {
@@ -51,6 +59,7 @@ export default {
         this.mail = emailService.getEmptyMail();
     },
     components: {
-        emailNav
+        emailNav,
+        emailFilter
     }
 }

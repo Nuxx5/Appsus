@@ -12,7 +12,6 @@
 body, html {
     margin: 0;
     height: 100%;
-    /* position: relative; */
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -61,4 +60,12 @@ h1, h2, h3, h4, h5, h6, p {
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+}
+
+/* view-port Large screen */
+
+@media only screen and (max-width: 750px){
+    .main-nav{
+        
+    }
 }
