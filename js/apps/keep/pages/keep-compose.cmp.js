@@ -26,7 +26,9 @@ export default {
         return {
             note: {
                 type: 'txt',
-                contents: null
+                isPinned: false,
+                color: 'white',
+                contents: null,
             },
             placeholderContents: 'write your note here'
         }

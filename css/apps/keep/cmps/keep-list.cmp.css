@@ -41,3 +41,15 @@ justify-content: center;
     overflow: hidden;
     outline:none;      
 }
+
+.pin-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;    
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;      
+}

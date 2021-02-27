@@ -9,7 +9,8 @@ export const keepService = {
     getById,
     remove,
     save,
-    edit
+    edit,
+    pin
 }
 
 function query(){
@@ -32,6 +33,10 @@ function getById(id) {
     return storageService.remove(NOTES_KEY, noteId)
 }
 
+function pin(noteId) {
+
+}
+
 function _createNotes() {
     let notes = utilService.loadFromStorage(NOTES_KEY)
     if (!notes || !notes.length) {
@@ -40,23 +45,30 @@ function _createNotes() {
                 id: utilService.makeId(),
                 type: 'Txt',
                 isPinned: true,
+                color: 'blue',
                 contents: "Fullstack Me Baby!"
             },
             {
                 id: utilService.makeId(),
                 type: 'Img',
+                isPinned: false,
+                color: 'red',
                 contents: "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg",
                    
             },
             {
                 id: utilService.makeId(),
                 type: 'Video',
+                isPinned: false,
+                color: 'green',
                 contents: "https://www.youtube.com/watch?v=EykdLqt7q34",
                    
             },
             {
                 id: utilService.makeId(),
                 type: 'Audio',
+                isPinned: false,
+                color: 'yellow',
                 contents: "../../../../audio/ringtone.mp3",
             },
         ]

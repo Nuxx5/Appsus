@@ -11,11 +11,13 @@ export default {
     template: `
     <ul class="keep-list grid">
         <li v-for="note in notes" :key="note.id" class="note-preview-container" >
-            <div class="note-container btns-container" :style="setColor">
+            <div class="note-container btns-container" :style="setColor(note)">
                 <!-- <p>{{note.contents}}</p> -->
-                <component :is="'keep'+note.type" :note="note" :style="setColor"></component>
-                <button class="remove-btn" @click="remove(note.id)">🗑️</button>
-                <input type="color" @input="changeColor($event)">
+                <component :is="'keep'+note.type" :note="note" :style="setColor(note)"></component>
+                <button v-if="note.isPinned" class="pin-btn" @click="pin(note, note.id)" title="unpin note">📌</button>
+                <button v-if="!note.isPinned" class="pin-btn" @click="pin(note, note.id)" title="pin note">⭐</button>
+                <button class="remove-btn" @click="remove(note, note.id)" title="remove note">🗑️</button>
+                <input type="color" @input="changeColor(note, $event)">
                 <!-- @click.native="logId(note.id)" -->
                 <!-- <router-link :to="'/keep/'+note.id">Details</router-link> -->
             </div>
@@ -25,13 +27,11 @@ export default {
     data() {
         return {
             bgcColor: null,
-            color: {
-                code: null,
-            }
         }
     },
     methods: {
-        remove(noteId) {
+        remove(note, noteId) {
+            if (note.isPinned) return
             this.$emit('remove', noteId)
         },
         select(note) {
@@ -40,18 +40,18 @@ export default {
         logId(noteId) {
             console.log('Id is', noteId);
         },
-        changeColor(e) {
-            this.color.code = e.target.value
-            console.log(e)
-            console.log(e.target.value)
+        changeColor(note, e) {
+            note.color = e.target.value
+            this.$emit('updated', note)
+        },
+        setColor(note) { 
+            return {'background-color': note.color}
+        },
+        pin(note, noteId) {
+            note.isPinned = !note.isPinned
+            if (note.isPinned) this.$emit('pinned', noteId)
         }
-    },
-    computed: {
-        setColor() {
-            return {
-                'background-color': this.color.code
-            }
-        }
+        
     },
     components: {
         keepPreview,

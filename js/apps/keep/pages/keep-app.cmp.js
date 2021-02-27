@@ -12,7 +12,7 @@ export default {
             <keep-filter @filtered="setFilter" />
             <keep-compose @loadNotes="loadNotes"/>
             <!-- <router-link to="/keep/add">Add a new note!</router-link> -->
-            <keep-list :notes="notesToShow" @selected="selectNote" @remove="removeNote" />
+            <keep-list :notes="notesToShow" @selected="selectNote" @remove="removeNote" @updated="updateNote" @pinned="pinNote" />
             <!-- <book-details v-if="selectedBook" :book="selectedBook" @close="selectedBook = null" /> -->
             <!-- <book-edit /> -->
         </section>
@@ -30,6 +30,26 @@ export default {
             keepService.query()
             .then(notes => this.notes = notes)
             console.log('notes', this.notes);
+        },
+        updateNote(note) {
+            keepService.edit(note)
+            .then(note => {
+                console.log('Saved note:', note);
+                const msg = {
+                    txt: 'Note saved successfully',
+                    type: 'success'
+                }
+                eventBus.$emit('show-msg', msg)
+                this.$emit('loadNotes')
+            })
+            .catch(err => {
+                console.log(err);
+                const msg = {
+                    txt: 'Error, please try again later',
+                    type: 'error'
+                }
+                eventBus.$emit('show-msg', msg)
+            })
         },
         removeNote(noteId) {
             keepService.remove(noteId)
@@ -51,6 +71,10 @@ export default {
                 eventBus.$emit('show-msg', msg)
             })
             // .then(() => this.loadNotes())
+        },
+        pinNote(noteId){
+            keepService.pin(noteId)
+
         },
         selectNote(note) {
             this.selectedNote = note

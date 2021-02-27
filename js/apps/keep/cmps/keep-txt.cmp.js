@@ -9,7 +9,7 @@ export default {
         <long-text class="long-text" v-if="!edit" :txt="note.contents" />
         <textarea class="keep-textarea" rows="15" cols="45" id="text-area" v-if="edit" v-model="note.contents" ref="textedit" @click="focus"  @blur="saveNote">
         </textarea>
-        <input v-if="edit" type="color" @input="changeColor($event)">
+        <!-- <input v-if="edit" type="color" @input="changeColor($event)"> -->
         </section> 
     `,
     data() {
@@ -17,9 +17,9 @@ export default {
         //    note: null,
            edit: false,
            bgcColor: null,
-           color: {
-               code: null
-           }
+        //    color: {
+        //        code: null
+        //    }
         }
     },
     methods: {
@@ -36,19 +36,19 @@ export default {
         focus() {
             this.$refs.textedit.focus()
         },
-        changeColor(e) {
-            this.color.code = e.target.value
-            console.log(e)
-            console.log(e.target.value)
-        }
+        // changeColor(e) {
+        //     this.color.code = e.target.value
+        //     console.log(e)
+        //     console.log(e.target.value)
+        // }
     },
-    computed: {
-        setColor() {
-        return {
-            'background-color': this.color.code
-        }
-    }
-},
+    // computed: {
+    //     setColor() {
+    //     return {
+    //         'background-color': this.color.code
+    //     }
+    // }
+// },
     components : {
         longText
     }
