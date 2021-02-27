@@ -4,5 +4,5 @@ export default {
     name: 'keep-audio',
     props: ['note'],
     template: `
-    <audio controls :src="note.contents"></audio>`
+    <audio class="audio" controls :src="note.contents"></audio>`
 }
