@@ -1,6 +1,7 @@
 .keep-list {
     list-style: none;
     margin: auto;
+    padding-inline-start: unset;
 }
 
 .grid {
@@ -9,7 +10,8 @@
     grid-template-rows: auto;
     gap: 20px;
     justify-content: center;
-    margin-top: 20px;
+    padding-top: 5.4vh;
+    padding-bottom: 5.5vh;
 }
 
 .note-container {
@@ -19,10 +21,9 @@
     border: 1px solid gray;
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    margin: 10px;
+    margin:auto;
     justify-content: center;
-    border-radius: 4px;
+    border-radius: 5px;
     background-color: lightyellow;
     text-align: center;
 }

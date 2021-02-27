@@ -5,12 +5,4 @@
 @import "../pages/keep-details.cmp.css";
 @import "../cmps/keep-img.cmp.css";
 @import "../cmps/keep-txt.cmp.css";
-
-.keep-app {
-  background-image: url('../img/notes.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-  margin: auto;
-}
+@import "../cmps/keep-audio.cmp.css";
