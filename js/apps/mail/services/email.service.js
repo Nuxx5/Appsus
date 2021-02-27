@@ -65,8 +65,8 @@ function _createMails() {
         mails = [
             {
                 id: utilService.makeId(),
-                from: 'Bari',
-                to: 'Ran',
+                from: 'Ran',
+                to: 'Bari',
                 subject: 'Wassap?',
                 body: 'As Moti told you, you should not leave your dog outside, his making a lot of noise.',
                 isRead: true,
@@ -77,8 +77,8 @@ function _createMails() {
             },
             {
                 id: utilService.makeId(),
-                from: 'Bari',
-                to: 'Ran',
+                from: 'Ran',
+                to: 'Bari',
                 subject: 'Hey',
                 body: 'Are you sure? I did not notice that today is holidy. I went to work and the office was closed.',
                 isRead: false,
@@ -89,8 +89,8 @@ function _createMails() {
             },
             {
                 id: utilService.makeId(),
-                from: 'Bari',
-                to: 'Ran',
+                from: 'Yossi',
+                to: 'Bari',
                 subject: 'Need to do',
                 body: 'Please pick the kids from school. They are waiting for you for more than two hours.',
                 isRead: true,
@@ -101,8 +101,8 @@ function _createMails() {
             },
             {
                 id: utilService.makeId(),
-                from: 'Bari',
-                to: 'Ran',
+                from: 'Nurit',
+                to: 'Bari',
                 subject: 'Good news',
                 body: 'I think you should check your mail. I heard someone is looking for you around the block.',
                 isRead: false,
@@ -113,8 +113,8 @@ function _createMails() {
             },
             {
                 id: utilService.makeId(),
-                from: 'Bari',
-                to: 'Ran',
+                from: 'David',
+                to: 'Bari',
                 subject: 'About the car',
                 body: 'Hi, how is this car? I heard that Subayo is a great car, like shown on TV that can go everywere and very comfortable for the family.',
                 isRead: false,
@@ -125,8 +125,8 @@ function _createMails() {
             },
             {
                 id: utilService.makeId(),
-                from: 'Bari',
-                to: 'Ran',
+                from: 'Rachel',
+                to: 'Bari',
                 subject: 'About Javascript',
                 body: 'Do you familiar with a master in Javascript? I think maybe, not so far, you would not need one, because you will be one.',
                 isRead: false,
@@ -137,8 +137,8 @@ function _createMails() {
             },
             {
                 id: utilService.makeId(),
-                from: 'Bari',
-                to: 'Ran',
+                from: 'Ran',
+                to: 'Bari',
                 subject: 'How is the weather today?',
                 body: 'Here at the northern part of Israel the weather now is a bit cold, but you can see around you the snowy mountains, which is beautifall',
                 isRead: false,
