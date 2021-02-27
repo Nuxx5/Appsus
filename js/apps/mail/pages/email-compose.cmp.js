@@ -21,7 +21,12 @@ export default {
             <input type="text" placeholder="" v-model="mail.subject" />
             </div>
             <textarea cols="30" rows="20" v-model="mail.body"></textarea>
-            <button class="compose-save-btn">SEND</button>
+            <div class="email-compose-btns">
+                <button class="compose-save-btn">SEND</button>
+                <router-link to="/mail">
+                <button class="compose-save-btn">BACK</button>
+                </router-link>
+            </div>
         </form>
         </div>
     </section>

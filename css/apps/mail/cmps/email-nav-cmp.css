@@ -34,10 +34,6 @@
     color: lightslategray;
 }
 
-/* .menu-open{
-    display: none;
-} */
-
 .menu-btn {
     display: none;
 }
@@ -61,17 +57,14 @@
         width: 50%;
     }
     
-    /* .menu-open{
-        display: block;
+    /* body.menuOpen .main-email-nav */
+    body.menuOpen .main-email-nav {
+        transform: translateX(0);
+    }
+
+    /* .main-email-nav .menuOpen {
+        transform: translateX(0);
     } */
-
-    body.menuOpen .email-nav{
-        transform: translateX(0);
-    }
-
-    .email-nav .menuOpen {
-        transform: translateX(0);
-    }
 
     body.menuOpen .main-screen {
         visibility: visible;

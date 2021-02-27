@@ -134,6 +134,30 @@ function _createMails() {
                 isSent: false,
                 isTrash: false,
                 sentAt: 1600133930474
+            },
+            {
+                id: utilService.makeId(),
+                from: 'Bari',
+                to: 'Ran',
+                subject: 'How is the weather today?',
+                body: 'Here at the northern part of Israel the weather now is a bit cold, but you can see around you the snowy mountains, which is beautifall',
+                isRead: false,
+                isStarred: true,
+                isSent: false,
+                isTrash: false,
+                sentAt: 1600133930474
+            },
+            {
+                id: utilService.makeId(),
+                from: 'Bari',
+                to: 'Ran',
+                subject: 'Try our service...',
+                body: 'You should try the laundry services that provides by the laundry company Lolo. They will do a very good job for your clothing.',
+                isRead: true,
+                isStarred: true,
+                isSent: true,
+                isTrash: false,
+                sentAt: 1600133930474
             }
 
         ]

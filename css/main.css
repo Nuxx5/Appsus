@@ -99,13 +99,6 @@ h1, h2, h3, h4, h5, h6, p {
         transition: opacity 0.8s;
         cursor: pointer;
     }
-    /* .menu-open .main-nav {
-        transform: translateX(0);
-    } */
-    /* .menu-open .main-screen {
-        opacity: 1;
-        visibility: visible;
-    } */
 
 
 }

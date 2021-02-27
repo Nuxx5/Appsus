@@ -4,7 +4,7 @@
 export default {
     name: 'email-nav',
     template: `
-    <section>
+    <section class="main-email-nav">
         <!-- <div class="main-screen" :class="menuOpen" @click="toggleMenu"></div> -->
         <button class="menu-btn" :class="menuOpen" @click="toggleMenu">☰</button>
         <div class="email-nav">
