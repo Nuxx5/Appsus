@@ -1,7 +1,7 @@
 import appFooter from '../cmps/app-footer.cmp.js';
 
 export default {
-    template:`
+    template: `
     <section class="home-page">
         <div class="home-text">
         <h1>Appsus</h1>
