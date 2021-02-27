@@ -1,0 +1,15 @@
+.keep-filter {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.search-input {
+    height: 40px;
+    width: 250px;
+    border-radius: 8px;
+    /* margin-right: 10px; */
+    border: 1px solid lightgray;
+    font-size: 1.08rem;
+    /* outline: none;
+    border: none; */
+}

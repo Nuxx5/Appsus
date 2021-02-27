@@ -1,3 +1,13 @@
+.keep-input {
+    height: 40px;
+    width: 250px;
+    border-radius: 8px;
+    /* margin-right: 10px; */
+    margin-top: 10px;
+    border: 1px solid lightgray;
+    font-size: 1.08rem;
+}
+
 .compose-btn {     
     background-color: Transparent;
     background-repeat:no-repeat;
@@ -5,8 +15,20 @@
     cursor:pointer;
     overflow: hidden;
     outline:none;
-    height: 30px;
-    width: 30px;
+    height: 33px;
+    width: 33px;
+    font-size: 1rem;
+}
+.far.fa-image {
+    font-size: 1.6rem;
+}
+
+.fab.fa-youtube {
+    font-size: 1.6rem;
+}
+
+.fas.fa-volume-up {
+    font-size: 1.5rem;
 }
 
 .btn-container {
@@ -18,3 +40,7 @@
     margin-top: 100px;
     padding: 50px;
 } */
+
+.far {
+    font-size: 1.5em;
+}

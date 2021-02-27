@@ -1,14 +1,15 @@
 .keep-list {
-list-style: none;
-margin: auto;
+    list-style: none;
+    margin: auto;
 }
 
 .grid {
-display: grid;
-grid-template-columns: repeat(3, 400px);
-grid-template-rows: auto;
-gap: 20px;
-justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    grid-template-rows: auto;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 /* .note-preview-container {
@@ -33,35 +34,55 @@ justify-content: center;
 .remove-btn {
     position: absolute;
     bottom: 0;
-    right: 0;    
+    right: 0;
     background-color: Transparent;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     border: none;
-    cursor:pointer;
+    cursor: pointer;
     overflow: hidden;
-    outline:none;      
+    outline: none;
+    font-size: 0.7rem;
 }
 
 .pin-btn {
     position: absolute;
     bottom: 0;
-    left: 0;    
+    left: 0;
     background-color: Transparent;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     border: none;
-    cursor:pointer;
+    cursor: pointer;
     overflow: hidden;
-    outline:none;      
+    outline: none;
 }
 
-@media only screen and (max-width:1250px){
+.color-btn {
+    position: absolute;
+    bottom: 0;
+    left: 160px;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    opacity: 0;
+}
+
+.color-palete {
+    position: absolute;
+    bottom: 0;
+    left: 160px;
+}
+
+@media only screen and (max-width:1250px) {
     .grid {
         grid-template-columns: repeat(2, 400px);
-        }
+    }
 }
 
-@media only screen and (max-width:840px){
+@media only screen and (max-width:840px) {
     .grid {
         grid-template-columns: repeat(1, 400px);
-        }
+    }
 }

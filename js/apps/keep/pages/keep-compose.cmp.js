@@ -13,12 +13,12 @@ export default {
             <input class="keep-input" onfocus="value=''" v-model="note.contents"
                 :placeholder="placeholderContents" @keyup.enter="saveNote">
             <div class="btn-container">
-                <button title="text" class="compose-btn" @click="changeType('Txt')">📝</i></button>
-                <button title="image" class="compose-btn" @click="changeType('Img')">🖼️</i></button>
-                <button title="to-do" class="compose-btn" @click="changeType('Todo')">📋</i></button>
-                <button title="video" class="compose-btn" @click="changeType('Video')">🎦</i></button>
-                <button title="audio" class="compose-btn" @click="changeType('Audio')">🔊</i></button>
-                <button title="save" class="compose-btn" @click="saveNote()">💾</i></button>
+                <button title="text" class="compose-btn" @click="changeType('Txt')"><i class="far fa-file-alt"></i></i></button>
+                <button title="image" class="compose-btn" @click="changeType('Img')"><i class="far fa-image"></i></i></button>
+                <button title="to-do" class="compose-btn" @click="changeType('Todo')"><i class="far fa-list-alt"></i></i></button>
+                <button title="video" class="compose-btn" @click="changeType('Video')"><i class="fab fa-youtube"></i></i></button>
+                <button title="audio" class="compose-btn" @click="changeType('Audio')"><i class="fas fa-volume-up"></i></i></button>
+                <button title="save" class="compose-btn" @click="saveNote()"><i class="far fa-save"></i></i></button>
             </div>
         </section> 
     `,

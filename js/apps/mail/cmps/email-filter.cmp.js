@@ -15,7 +15,7 @@ export default {
                 <option value="date" selected>Date</option>
                 <option value="subject">Subject</option>
         </select>
-        <span>{{count}}✉</span>
+        <span>{{count}}</span> <i class="far fa-envelope count-envelope"></i>
     </section>
     `,
     data() {

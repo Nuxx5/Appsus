@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6, p {
 /* HEADER */
 
 .app-header {
-    background-color: rgb(9, 102, 156);
+    background-color: rgb(47, 161, 226);
     padding: 10px;
     height: 5vh;
     display: flex;
@@ -51,15 +51,44 @@ h1, h2, h3, h4, h5, h6, p {
     text-align: center;
 }
 
+.home-text {
+    padding: 150px;
+    font-size: 3rem;
+    color: rgb(55, 78, 152)
+}
 .about {
-    background-image: url('../img/appsus.jpg');
+    background-image: url('../img/pencils.jpg');
     height: 95vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-left: 150px;
+    /* text-align: center; */
+}
+
+.about-text {
+    padding: 220px;
+    font-size: 2rem;
+}
+
+.about-text h1 {
     text-align: center;
 }
 
+.keep-app {
+    background-image: url('../img/notes.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+      text-align: center;
+      margin: auto;
+      height: 95vh;
+    }
+
+    .email-app {
+        background-color: lightyellow;
+          height: 95vh;
+        }
 /* view-port Large screen */
 
 @media only screen and (max-width: 750px) {
