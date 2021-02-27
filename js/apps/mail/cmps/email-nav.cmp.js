@@ -5,17 +5,20 @@ export default {
     name: 'email-nav',
     template: `
     <div class="email-nav">
-                <router-link class="email-compose-btn" to="/mail/add">Compose</router-link>
-                <router-link class="email-nav-btn" to="/mail">Inbox</router-link>
-                <button @click="setNavFilter('inbox')">Inbox</button>
-                <button @click="setNavFilter('starred')">Starred</button>
-                <button @click="setNavFilter('sent')">Sent Mail</button>
-                <button @click="setNavFilter('trash')">Trash</button>
+                <router-link to="/mail/add">
+                    <button class="email-compose-btn"><span>+</span>Compose</button>
+                </router-link>
+                <router-link to="/mail">
+                    <button class="email-nav-btn" @click="setNavFilter('inbox')">Inbox</button>
+                </router-link>
+                <button class="email-nav-btn" @click="setNavFilter('starred')">Starred</button>
+                <button class="email-nav-btn" @click="setNavFilter('sent')">Sent Mail</button>
+                <button class="email-nav-btn" @click="setNavFilter('trash')">Trash</button>
 
 
-                <router-link class="email-nav-btn" to="/mail/starred">Starred</router-link>
-                <router-link class="email-nav-btn" to="/mail/sent">Sent mail</router-link>
-                <router-link class="email-nav-btn" to="/mail/draft">Draft</router-link>
+                <!-- <router-link class="email-nav-btn" to="/mail/starred">Starred</router-link> -->
+                <!-- <router-link class="email-nav-btn" to="/mail/sent">Sent mail</router-link> -->
+                <!-- <router-link class="email-nav-btn" to="/mail/draft">Draft</router-link> -->
             </div>
     `,
     data() {
@@ -26,7 +29,6 @@ export default {
     methods: {
         setNavFilter(filter) {
             this.navFilterBy = filter;
-            console.log('setNavFilter', this.navFilterBy);
             this.$emit('navFiltered', this.navFilterBy)
         },
     },

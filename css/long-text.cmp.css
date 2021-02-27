@@ -1,0 +1,14 @@
+.long-text {
+    max-width: 300px;
+}
+
+.read-more-btn{
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 0.8em;
+    border: 1px solid lightgray;
+    width: 90px;
+    border-radius: 8px;
+    background-color: lightslategray;
+}

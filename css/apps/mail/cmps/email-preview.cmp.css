@@ -1,5 +1,5 @@
 .email-preview {
-    height: 60px;
+    /* height: 60px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,5 +9,6 @@
 
 .unread {
     font-weight: bold;
-    padding: 10px;
+    /* padding: 10px; */
 }
+

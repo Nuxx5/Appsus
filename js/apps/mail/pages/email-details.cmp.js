@@ -7,17 +7,25 @@ export default {
     // props: ['mail'],
     template: `
     <section v-if="mail" class="email-details">
+        <!-- <div class="email-details-content"> -->
         <email-nav />
         <div class="email-details-content">
-            <p>Subject: {{mail.subject}}</p>
-            <p>From: {{mail.from}}</p>
-            <p>To: {{mail.to}}</p>
-            <p>{{setTime}}</p>
+            <div class="details-header">
+                <p>Subject: {{mail.subject}}</p>
+                <p>From: {{mail.from}}</p>
+                <p>To: {{mail.to}}</p>
+                <p>Time: {{setTime}}</p>
+            </div>
             <!-- <p>{{mail.body}}</p> -->
-            <long-text :txt="mail.body" />
-            <button @click="remove(mail.id)">🗑️</button>
-            <router-link to="/mail">Back</router-link>
+            <div class="details-body">
+                <long-text :txt="mail.body" />
+            </div>
+            <div class="details-btn">
+                <button class="delete-btn" @click="remove(mail.id)">🗑️</button>
+                <router-link class="details-back-btn" to="/mail">Back</router-link>
+            </div>
         </div>
+        <!-- </div> -->
     </section>
     `,
     data() {
@@ -29,12 +37,12 @@ export default {
     methods: {
         loadMail() {
             const mailId = this.$route.params.mailId;
-            console.log('mail.id details1', mailId);
+            // console.log('mail.id details1', mailId);
             emailService.getById(mailId)
                 .then(mail => {
                     this.mail = mail;
                     this.mail.isRead = true;
-                    console.log('mail', this.mail);
+                    // console.log('mail', this.mail);
                     emailService.edit(this.mail)
                     .then(mail => {
                         this.mail = mail;

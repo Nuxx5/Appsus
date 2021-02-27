@@ -1,0 +1,35 @@
+.email-nav{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 40vh;
+    margin-left: 20px;
+    color: lightslategray;
+}
+
+.email-compose-btn{
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 1px solid lightgray;
+    width: 150px;
+    border-radius: 20px;
+    outline: none;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding-right: 20px;
+    background-color: white;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 20%), 0 3px 10px 0 rgb(0 0 0 / 20%);
+}
+.email-compose-btn span{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: yellowgreen;
+    padding-right: 10px;
+}
+
+.email-nav-btn {
+    font-size: 1.2rem;
+    color: lightslategray;
+}

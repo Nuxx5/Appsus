@@ -5,17 +5,17 @@ export default {
     props: ['count'],
     template: `
     <section class="email-filter">
-        <input type="text" @input="setFilter" placeholder="Search mail" v-model="filterBy.bySubject">
-        <select name="filter" id="filter" @input="setFilter" v-model="filterBy.byRead">
+        <input class="input-btn" type="text" @input="setFilter" placeholder="Search mail" v-model="filterBy.bySubject">
+        <select class="filter-btn" name="filter" id="filter" @input="setFilter" v-model="filterBy.byRead">
                 <option value="all" selected>All</option>
                 <option value="read">Read</option>
                 <option value="unRead">Unread</option>
         </select>
-        <select name="sort" id="sort" @input="setSort" v-model="sortBy">
+        <select class="sort-btn" name="sort" id="sort" @input="setSort" v-model="sortBy">
                 <option value="date" selected>Date</option>
                 <option value="subject">Subject</option>
         </select>
-        <span>✉{{count}}</span>
+        <span>{{count}}✉</span>
     </section>
     `,
     data() {

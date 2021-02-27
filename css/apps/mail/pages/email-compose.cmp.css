@@ -1,18 +1,60 @@
-.email-compose{
-    display: flex;
-    justify-content: space-between;
-
+.email-compose {
+    /* display: flex;
+    justify-content: space-between; */
 }
 
-.email-compose-content{
-    width: 450px;
-    min-height: 150px;
+.email-compose-content {
+    display: flex;
+    margin-right: 40px;
+    margin-top: 80px;
+}
+
+.email-compose-form {
+    width: 70%;
+    height: 70vh;
     border: 1px solid gray;
-    /* display: flex; */
-    /* flex-direction: column; */
-    padding: 10px;
-    margin: 10px auto 10px auto;
+    display: flex;
+    flex-direction: column;
+    /* padding: 10px; */
+    margin: 15px auto 10px auto;
     /* justify-content: space-between; */
     border-radius: 4px;
+}
 
+.compose-header {
+    height: 50px;
+    border-bottom: 1px solid black;
+    padding-top: 12px;
+    background-color: lightslategray;
+}
+
+.compose-to {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    border-bottom: 1px solid black;
+    align-items: center;
+}
+
+.compose-to input {
+    border: none;
+    flex-grow: 1;
+    margin-left: 10px;
+    outline: none;
+}
+
+.email-compose-form textarea {
+    padding: 10px;
+}
+
+.compose-save-btn {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    border: 1px solid lightgray;
+    width: 80px;
+    border-radius: 8px;
+    outline: none;
+    margin-left: 20px;
+    background-color: lightseagreen;
 }
