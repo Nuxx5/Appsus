@@ -12,20 +12,10 @@ export const emailService = {
     save,
     edit,
     getEmptyMail
-
 }
 
 function query() {
     return storageService.query(MAILS_KEY);
-
-    // return storageService.query(BOOKS_KEY)
-    //     .then(books => {
-    //         if (!books.length) {
-    //             utilService.saveToStorage(BOOKS_KEY, gBooks);
-    //             books = gBooks;
-    //         }
-    //         return books;
-    //     })
 }
 
 function remove(mailId) {

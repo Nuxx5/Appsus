@@ -14,9 +14,6 @@ export default {
                     <button class="read-btn" v-if="!mail.isRead" @click="setRead(mail)"><i class="far fa-envelope"></i></button>
                     <button class="read-btn" v-if="mail.isRead" @click="setRead(mail)"><i class="far fa-envelope-open"></i></button>
                     <button @click="remove(mail.id)"><i class="far fa-trash-alt"></i></button>
-                    <!-- <button @click="select(book)">Details</button> -->
-                    <!-- <email-details @showList="showMails" /> -->
-                    <!-- <router-link :to="'/mail/'+mail.id" tag="div">Details</router-link> -->
                 </div>
             </li>
         </ul>
@@ -24,7 +21,6 @@ export default {
     `,
     data() {
         return {
-            // star: '✰'
         }
     },
     methods: {
@@ -37,18 +33,13 @@ export default {
         setRead(mail) {
             this.$emit('setRead', mail);
         },
-        setStatus(){
+        setStatus() {
 
         },
         showMails() {
             console.log('showMails');
         },
-        // select(mail) {
-        //     this.$emit('selected', mail);
-        // },
         select(mailId) {
-            // this.$emit('loged', mailId);
-            // console.log('select', mailId);
             this.$router.push('/mail/' + mailId)
         }
     },

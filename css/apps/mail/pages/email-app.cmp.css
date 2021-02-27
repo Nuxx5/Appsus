@@ -6,13 +6,8 @@
 @import "../cmps/email-status.cmp.css";
 @import "../cmps/email-nav-cmp.css";
 
-.email-app {
-    /* display: flex;
-    justify-content: space-between; */
-}
-
 .email-main-content {
     display: flex;
     margin-right: 40px;
-    margin-top: 20px ;
+    margin-top: 20px;
 }

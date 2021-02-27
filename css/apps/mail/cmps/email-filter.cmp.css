@@ -32,22 +32,21 @@
     font-size: 1.08rem;
 }
 
-.email-filter span{
+.email-filter span {
     height: 50px;
     color: lightslategray;
     font-size: 1.5rem;
 }
 
 .count-envelope {
- padding-top: 5px;
- color: lightslategray;
+    padding-top: 5px;
+    color: lightslategray;
 }
 
-@media only screen and (max-width:650px){
+@media only screen and (max-width:650px) {
     .input-btn {
         width: 200px;
     }
-
     .sort-btn {
         margin-right: 50px;
     }

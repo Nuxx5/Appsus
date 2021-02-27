@@ -7,7 +7,6 @@ export default {
     name: 'email-compose',
     template: `
     <section class="email-compose">
-        <!-- <email-filter /> -->
         <div class="email-compose-content">
         <email-nav />
         <form @submit.prevent="saveMail" class="email-compose-form">
